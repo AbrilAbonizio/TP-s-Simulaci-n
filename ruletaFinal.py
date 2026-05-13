@@ -2,12 +2,8 @@ import sys
 import statistics
 import math
 import matplotlib.pyplot as plt
-import random 
+import random
 
-#cantidad tiradas = -c
-#corridas = -n
-#numero elegido = -e
-#sys.argv = [nombre_archivo, "-c", valor_-c, "-n", valor_-n, "-e", valor_-e]
 
 # Valida que los argumentos sean los correctos
 if len(sys.argv) != 7 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-e":
@@ -21,8 +17,8 @@ num_elegido = int(sys.argv[6])
 frec_abs = [] # Cantidad de veces que salió el número elegido por cada tirada
 frec_rel = [] # Porcentaje que representa el numero elejido frente a los que ssalieron en cada tirada
 promedios = [] # Valor promedio de todos los numeros por tirada
-desv_estandar = [] # 
-varianzas = [] #
+desv_estandar = []
+varianzas = []
 todos_los_numeros = []
 
 # Valores teóricos esperados
@@ -33,12 +29,11 @@ desv_estandar_esperado = math.sqrt(varianza_esperada)
 
 
 def tirada_ruleta():
- 
   # Números obtenidos en las tiradas de la ruleta
   numeros = []
 
   # Listas provisionales
-  frec_abs_prov= [] 
+  frec_abs_prov= []
   frec_rel_prov = [] 
   prom_prov = [] 
   desv_prov = [] 
@@ -46,7 +41,6 @@ def tirada_ruleta():
   
   for i in range (1, tiradas+1):
     numeros.append(random.randint(0,36))
-    
   
   # Calculo de medidas
     fa = numeros.count(num_elegido)
@@ -58,7 +52,7 @@ def tirada_ruleta():
       desv_prov.append(statistics.stdev(numeros))
       var_prov.append(statistics.variance(numeros))
     else:
-        # En la primera tirada, el desvío es 0 
+      # En la primera tirada, el desvío es 0
       desv_prov.append(0.0) 
       var_prov.append(0.0)
   
@@ -67,47 +61,33 @@ def tirada_ruleta():
   promedios.append(prom_prov)
   desv_estandar.append(desv_prov)
   varianzas.append(var_prov)
-  fa_esperada = len(numeros) / 37
   todos_los_numeros.append(numeros)
-  
-  #print(numeros)
 
 
+rachas_general = []
 def calcular_rachas(lista_numeros, elegido):
-  rachas = []
-  contador = 0
-  for n in lista_numeros:
-    if n == elegido:
-      rachas.append(contador)
-      contador = 0  # Reseteamos al encontrar el número
-    else:
-      contador += 1
-  return rachas
+  for corrida in lista_numeros:
+      rachas_corrida = []
+      contador = 0
+      ultimo_es_elegido = False
+      for tirada in range(len(corrida)):
+        if corrida[tirada] == elegido:
+          rachas_corrida.append(contador)
+          contador = 0  # Reseteamos al encontrar el número
+        else:
+          contador += 1
+          if tirada == len(corrida)-1:
+              rachas_corrida.append(contador)
+      rachas_general.append(rachas_corrida)
 
 
-
+# Programa principal
 if (num_elegido<0 or num_elegido>36):
   print ("El numero elegido debe estar entre 0 y 36")
 else:
   # Cantidad de corridas de la ruleta 
   for _ in range (0, corridas):
     tirada_ruleta()
-
-  #print("\nFrecuencia Absoluta: ", frec_abs, "\nFrecuencia Relativa: ", frec_rel,"\nPromedios: ", promedios, "\nDesvio Estándar: ", desv_estandar, "\nVarianzas: ", varianzas)
-
-
-
-# Grafico de promedios --> esta forma hace un grafico solo en la ventana
-#plt.title("Promedios")   # Establece el título del gráfico
-#plt.xlabel("n (número de tiradas)")   # Establece el título del eje x
-#plt.ylabel("vp (valor promedio)")   # Establece el título del eje y
-#plt.axhline(prom_esperado, linestyle = "--", color = "black", label="Promedio Esperado")
-#plt.grid(True)
-
-#for i in range (corridas):
- # plt.plot(promedios[i], label = f"Corrida {i+1}")  # Dibuja el gráfico
-  #plt.legend(ncol=2)
-
 
 
 fig, axes = plt.subplots(2, 2, figsize = (12,10)) # --> para mostrar los 4 graficos en una misma ventana
@@ -123,8 +103,7 @@ axes[0,0].axhline(fr_esperada, linestyle = "--", color = "black", label=f"Frec. 
 axes[0,0].legend(ncol=2)
 
 for i in range (corridas):
-  axes[0,0].plot(frec_rel[i], label = f"Corrida {i+1}")  # Dibuja el gráfico
-  #plt.legend(ncol=2)
+  axes[0,0].plot(frec_rel[i], label = f"Corrida {i+1}", linewidth = 0.5 )  # Dibuja el gráfico
 
 
 # Gráfico de Promedios
@@ -135,8 +114,7 @@ axes[0,1].axhline(prom_esperado, linestyle = "--", color = "black", label=f"Prom
 axes[0,1].legend(ncol=2)
 
 for i in range (corridas):
-  axes[0,1].plot(promedios[i], label = f"Corrida {i+1}")  # Dibuja el gráfico
-  #plt.legend(ncol=2)
+  axes[0,1].plot(promedios[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 # Gráfico del Desvío Estándar
@@ -147,8 +125,7 @@ axes[1,0].axhline(desv_estandar_esperado, linestyle = "--", color = "black", lab
 axes[1,0].legend(ncol=2)
 
 for i in range (corridas):
-  axes[1,0].plot(desv_estandar[i], label = f"Corrida {i+1}")  # Dibuja el gráfico
-  #plt.legend(ncol=2)
+  axes[1,0].plot(desv_estandar[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 # Gráfico de la Varianza
@@ -159,8 +136,7 @@ axes[1,1].axhline(varianza_esperada, linestyle = "--", color = "black", label=f"
 axes[1,1].legend(ncol=2)
 
 for i in range (corridas):
-  axes[1,1].plot(varianzas[i], label = f"Corrida {i+1}")  # Dibuja el gráfico
-  #plt.legend(ncol=2)
+  axes[1,1].plot(varianzas[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 plt.subplots_adjust(hspace=0.5, top=0.9)
@@ -178,7 +154,9 @@ fa_finales = [frec_abs[i][-1] for i in range(corridas)]
 
 
 # Calcular cuantas tiradas de ruleta hubo sin que saliera el número elegido
-mis_rachas = calcular_rachas(lista_plana, num_elegido)
+calcular_rachas(todos_los_numeros, num_elegido)
+# Aplanar rachas
+mis_rachas = [n for racha in rachas_general for n in racha]
 
 
 # Grafico de barras (muestra cuantas veces salio el numero elegido en cada corrida)
