@@ -1,6 +1,8 @@
 import sys 
 import statistics
 import math
+from cProfile import label
+
 import matplotlib.pyplot as plt
 import random
 
@@ -96,48 +98,88 @@ else:
 
 
 # Gráfico de Frecuencias Relativas
+# Cálculo del promedio entre corridas
+frecuencias_general = []
+for i in range(tiradas):
+    suma = 0
+    for j in range(corridas):
+        suma = frec_rel[j][i] + suma
+    frecuencias_general.append(suma/corridas)
+#   Gráfico
 plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
 plt.title("Frecuencias Relativas")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("fr (frecuencias relativas)")
 plt.axhline(fr_esperada, linestyle = "--", color = "black", label=f"Frec. Rel. Esperada: {fr_esperada}")
-#plt.legend(ncol=2)
+plt.plot(frecuencias_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 for i in range (corridas):
   plt.plot(frec_rel[i], label = f"Corrida {i+1}", linewidth = 0.5 )  # Dibuja el gráfico
 
 
 # Gráfico de Promedios
+# Cálculo del promedio entre corridas
+promedios_general = []
+for i in range(tiradas):
+    suma = 0
+    for j in range(corridas):
+        suma = promedios[j][i] + suma
+    promedios_general.append(suma/corridas)
+#   Gráfico
 plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
 plt.title("Promedios")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("vp (valores promedios)")
 plt.axhline(prom_esperado, linestyle = "--", color = "black", label=f"Promedio Esperado: {prom_esperado}")
-#plt.legend(ncol=2)
+plt.plot(promedios_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 for i in range (corridas):
   plt.plot(promedios[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 # Gráfico del Desvío Estándar
+# Cálculo del promedio entre corridas
+desv_estandar_general = []
+for i in range(tiradas):
+    suma = 0
+    for j in range(corridas):
+        suma = desv_estandar[j][i] + suma
+    desv_estandar_general.append(suma/corridas)
+#   Gráfico
 plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
 plt.title("Desvío Estándar")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("vd (valor del desvío)")
 plt.axhline(desv_estandar_esperado, linestyle = "--", color = "black", label=f"Desv. Estándar Esperado: {desv_estandar_esperado}")
-#plt.legend(ncol=2)
+plt.plot(desv_estandar_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 for i in range (corridas):
   plt.plot(desv_estandar[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 # Gráfico de la Varianza
+# Cálculo del promedio entre corridas
+varianza_general = []
+for i in range(tiradas):
+    suma = 0
+    for j in range(corridas):
+        suma = varianzas[j][i] + suma
+    varianza_general.append(suma/corridas)
+#   Gráfico
 plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
 plt.title("Varianza")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("vv (valor de la varianza)")
 plt.axhline(varianza_esperada, linestyle = "--", color = "black", label=f"Varianza Esperada: {varianza_esperada}")
-#plt.legend(ncol=2)
+plt.plot(varianza_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 for i in range (corridas):
   plt.plot(varianzas[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
@@ -147,10 +189,6 @@ for i in range (corridas):
 
 fig2, axes = plt.subplots(2, figsize = (12,10)) 
 fig2.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
-
-
-# Convertir a la lista de listas en una sola lista larga
-lista_plana = [n for corrida in todos_los_numeros for n in corrida]
 
 
 # Obtener las frecuencias absolutas finales de cada corrida
