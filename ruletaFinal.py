@@ -90,56 +90,60 @@ else:
     tirada_ruleta()
 
 
-fig, axes = plt.subplots(2, 2, figsize = (12,10)) # --> para mostrar los 4 graficos en una misma ventana
+#fig, axes = plt.subplots(2, 2, figsize = (12,10)) # --> para mostrar los 4 graficos en una misma ventana
                     # 2 filas 2 columnas
-fig.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
+#fig.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
 
 
 # Gráfico de Frecuencias Relativas
-axes[0,0].set_title("Frecuencias Relativas")
-axes[0,0].set_xlabel("n (número de tiradas)")
-axes[0,0].set_ylabel("fr (frecuencias relativas)")
-axes[0,0].axhline(fr_esperada, linestyle = "--", color = "black", label=f"Frec. Rel. Esperada: {fr_esperada}")
-axes[0,0].legend(ncol=2)
+plt.figure(figsize=(10,5))
+plt.title("Frecuencias Relativas")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("fr (frecuencias relativas)")
+plt.axhline(fr_esperada, linestyle = "--", color = "black", label=f"Frec. Rel. Esperada: {fr_esperada}")
+#plt.legend(ncol=2)
 
 for i in range (corridas):
-  axes[0,0].plot(frec_rel[i], label = f"Corrida {i+1}", linewidth = 0.5 )  # Dibuja el gráfico
+  plt.plot(frec_rel[i], label = f"Corrida {i+1}", linewidth = 0.5 )  # Dibuja el gráfico
 
 
 # Gráfico de Promedios
-axes[0,1].set_title("Promedios")
-axes[0,1].set_xlabel("n (número de tiradas)")
-axes[0,1].set_ylabel("vp (valores promedios)")
-axes[0,1].axhline(prom_esperado, linestyle = "--", color = "black", label=f"Promedio Esperado: {prom_esperado}")
-axes[0,1].legend(ncol=2)
+plt.figure(figsize=(10,5))
+plt.title("Promedios")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("vp (valores promedios)")
+plt.axhline(prom_esperado, linestyle = "--", color = "black", label=f"Promedio Esperado: {prom_esperado}")
+#plt.legend(ncol=2)
 
 for i in range (corridas):
-  axes[0,1].plot(promedios[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
+  plt.plot(promedios[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 # Gráfico del Desvío Estándar
-axes[1,0].set_title("Desvío Estándar")
-axes[1,0].set_xlabel("n (número de tiradas)")
-axes[1,0].set_ylabel("vd (valor del desvío)")
-axes[1,0].axhline(desv_estandar_esperado, linestyle = "--", color = "black", label=f"Desv. Estándar Esperado: {desv_estandar_esperado}")
-axes[1,0].legend(ncol=2)
+plt.figure(figsize=(10,5))
+plt.title("Desvío Estándar")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("vd (valor del desvío)")
+plt.axhline(desv_estandar_esperado, linestyle = "--", color = "black", label=f"Desv. Estándar Esperado: {desv_estandar_esperado}")
+#plt.legend(ncol=2)
 
 for i in range (corridas):
-  axes[1,0].plot(desv_estandar[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
+  plt.plot(desv_estandar[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
 # Gráfico de la Varianza
-axes[1,1].set_title("Varianza")
-axes[1,1].set_xlabel("n (número de tiradas)")
-axes[1,1].set_ylabel("vv (valor de la varianza)")
-axes[1,1].axhline(varianza_esperada, linestyle = "--", color = "black", label=f"Varianza Esperada: {varianza_esperada}")
-axes[1,1].legend(ncol=2)
+plt.figure(figsize=(10,5))
+plt.title("Varianza")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("vv (valor de la varianza)")
+plt.axhline(varianza_esperada, linestyle = "--", color = "black", label=f"Varianza Esperada: {varianza_esperada}")
+#plt.legend(ncol=2)
 
 for i in range (corridas):
-  axes[1,1].plot(varianzas[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
+  plt.plot(varianzas[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
 
 
-plt.subplots_adjust(hspace=0.5, top=0.9)
+#plt.subplots_adjust(hspace=0.5, top=0.9)
 
 fig2, axes = plt.subplots(2, figsize = (12,10)) 
 fig2.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
