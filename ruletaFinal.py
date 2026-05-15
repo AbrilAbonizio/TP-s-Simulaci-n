@@ -112,11 +112,12 @@ plt.title("Frecuencias Relativas")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("fr (frecuencias relativas)")
 plt.axhline(fr_esperada, linestyle = "--", color = "black", label=f"Frec. Rel. Esperada: {fr_esperada}")
-plt.plot(frecuencias_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
-plt.legend()
 
 for i in range (corridas):
-  plt.plot(frec_rel[i], label = f"Corrida {i+1}", linewidth = 0.5 )  # Dibuja el gráfico
+  plt.plot(frec_rel[i], linewidth = 0.5 )  # Dibuja el gráfico
+
+plt.plot(frecuencias_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 
 # Gráfico de Promedios
@@ -134,11 +135,12 @@ plt.title("Promedios")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("vp (valores promedios)")
 plt.axhline(prom_esperado, linestyle = "--", color = "black", label=f"Promedio Esperado: {prom_esperado}")
-plt.plot(promedios_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
-plt.legend()
 
 for i in range (corridas):
-  plt.plot(promedios[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
+  plt.plot(promedios[i], linewidth = 0.5)  # Dibuja el gráfico
+
+plt.plot(promedios_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 
 # Gráfico del Desvío Estándar
@@ -156,11 +158,12 @@ plt.title("Desvío Estándar")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("vd (valor del desvío)")
 plt.axhline(desv_estandar_esperado, linestyle = "--", color = "black", label=f"Desv. Estándar Esperado: {desv_estandar_esperado}")
-plt.plot(desv_estandar_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
-plt.legend()
 
 for i in range (corridas):
-  plt.plot(desv_estandar[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
+  plt.plot(desv_estandar[i], linewidth = 0.5)  # Dibuja el gráfico
+
+plt.plot(desv_estandar_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 
 # Gráfico de la Varianza
@@ -178,11 +181,12 @@ plt.title("Varianza")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("vv (valor de la varianza)")
 plt.axhline(varianza_esperada, linestyle = "--", color = "black", label=f"Varianza Esperada: {varianza_esperada}")
-plt.plot(varianza_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
-plt.legend()
 
 for i in range (corridas):
-  plt.plot(varianzas[i], label = f"Corrida {i+1}", linewidth = 0.5)  # Dibuja el gráfico
+  plt.plot(varianzas[i], linewidth = 0.5)  # Dibuja el gráfico
+
+plt.plot(varianza_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
 
 
 #plt.subplots_adjust(hspace=0.5, top=0.9)
@@ -224,4 +228,3 @@ axes[1].set_xticks(range(0, int(max(mis_rachas)) + 20, 20))
 plt.tight_layout()
 plt.subplots_adjust(hspace=0.5, top=0.9)
 plt.show()
-
