@@ -8,7 +8,7 @@ import random
 
 
 # Valida que los argumentos sean los correctos
-if len(sys.argv) != 7 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-e" or sys.argv[7] != "-s" or sys.argv[9] != "-a":
+if len(sys.argv) != 10 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-e" or sys.argv[7] != "-s" or sys.argv[9] != "-a":
   print("Parámetros Incorrectos")
   sys.exit(1)
 
@@ -26,6 +26,7 @@ desv_estandar = []
 varianzas = []
 todos_los_numeros = []
 capitales = []
+frsa = []
 apuesta = 10
 
 
@@ -106,18 +107,24 @@ def tirada_ruleta(capital=0):
   desv_prov = [] 
   var_prov = []
   capital_prov = []
-  
+  frsa_prov = []
+
+  tiradas_ganadas = 0
   
   for i in range (1, tiradas+1):
     resultado = numeros.append(random.randint(0,36))
     if resultado == num_elegido:
       gano = True
-      capital_actual = capital_actual + apuesta
-      capital_prov.append(capital_actual)
+      tiradas_ganadas += 1
+      frsa_prov.append(tiradas_ganadas/i)
+      if tipo_capital == "f":
+        capital_actual = capital_actual + apuesta
+        capital_prov.append(capital_actual)
     else:
-      gano = False
-      capital_actual = capital_actual - apuesta
-      capital_prov.append(capital_actual)
+      if tipo_capital == "f":
+        gano = False
+        capital_actual = capital_actual - apuesta
+        capital_prov.append(capital_actual)
 
     if estrategia == "m":
       apuesta = estrategia_martingala("apuesta anterior", gano, tipo_capital, capital_actual) 
@@ -134,15 +141,6 @@ def tirada_ruleta(capital=0):
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible y si no alcanza hace all-in
       apuesta = apuesta if capital_actual >= apuesta else capital_actual
 
-    resultado = numeros.append(random.randint(0,36))
-    if resultado == num_elegido:
-      gano = True
-      capital_actual = capital_actual + apuesta
-      capital_prov.append(capital_actual)
-    else:
-      gano = False
-      capital_actual = capital_actual - apuesta
-      capital_prov.append(capital_actual)
 
     if tipo_capital == 'f' and capital_actual <=0:
       break
@@ -153,6 +151,7 @@ def tirada_ruleta(capital=0):
     frec_abs_prov.append(fa)
     frec_rel_prov.append(fa/i)
     prom_prov.append(statistics.mean(numeros))
+    frsa.append(frsa_prov)
     
     if len(numeros) > 1:
       desv_prov.append(statistics.stdev(numeros))
@@ -331,6 +330,30 @@ axes[1].set_xlabel("Longitud de la racha (Tiradas sin ganar)")
 axes[1].set_ylabel("Frecuencia (cuántas veces ocurrió)")
 axes[1].hist(mis_rachas, bins=30, edgecolor= "black", color='skyblue' )
 axes[1].set_xticks(range(0, int(max(mis_rachas)) + 20, 20))
+
+
+
+
+
+
+
+plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
+plt.title("Frecuencias Relativas de Apuesta Favorable")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("fr (frecuencia relativa)")
+
+for i in range (corridas):
+ plt.plot(frsa[i], linewidth = 0.5)  # Dibuja el gráfico
+
+plt.plot(varianza_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
+plt.legend()
+
+
+
+
+
+
 
 
 plt.tight_layout()
