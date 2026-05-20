@@ -6,9 +6,8 @@ from cProfile import label
 import matplotlib.pyplot as plt
 import random
 
-
 # Valida que los argumentos sean los correctos
-if len(sys.argv) != 10 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-e" or sys.argv[7] != "-s" or sys.argv[9] != "-a":
+if (len(sys.argv) != 11 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-e" or sys.argv[7] != "-s" or sys.argv[9] != "-a"):
   print("Parámetros Incorrectos")
   sys.exit(1)
 
@@ -39,13 +38,16 @@ desv_estandar_esperado = math.sqrt(varianza_esperada)
 
     
 def estrategia_dalembert(resultado, apuesta):
-  
-  if resultado:  # Si gana la tirada, aumenta su capital y disminuye el monto de la proxima apuesta en 1 unidad
-    nueva_apuesta -= apuesta
-  else:
-    nueva_apuesta += apuesta
+  monto_base = 10
 
-  return nueva_apuesta
+  if resultado:  # Si gana la tirada, aumenta su capital y disminuye el monto de la proxima apuesta en 1 unidad
+    apuesta -= monto_base
+    if apuesta < monto_base:  # El monto de apuesta no puede ser menor al monto base
+      apuesta = monto_base
+  else:
+    apuesta += monto_base
+
+  return apuesta
 
 
 def estrategia_martingala(apuesta_anterior, resultado_anterior, tipo_capital, capital=0):
@@ -107,16 +109,15 @@ def tirada_ruleta(capital=0):
   desv_prov = [] 
   var_prov = []
   capital_prov = []
-  frsa_prov = []
 
-  tiradas_ganadas = 0
+  capital_actual = capital
+  apuesta = 10
   
   for i in range (1, tiradas+1):
     resultado = numeros.append(random.randint(0,36))
+   
     if resultado == num_elegido:
       gano = True
-      tiradas_ganadas += 1
-      frsa_prov.append(tiradas_ganadas/i)
       if tipo_capital == "f":
         capital_actual = capital_actual + apuesta
         capital_prov.append(capital_actual)
@@ -151,7 +152,6 @@ def tirada_ruleta(capital=0):
     frec_abs_prov.append(fa)
     frec_rel_prov.append(fa/i)
     prom_prov.append(statistics.mean(numeros))
-    frsa.append(frsa_prov)
     
     if len(numeros) > 1:
       desv_prov.append(statistics.stdev(numeros))
@@ -168,7 +168,7 @@ def tirada_ruleta(capital=0):
   varianzas.append(var_prov)
   todos_los_numeros.append(numeros)
   capitales.append(capital_prov)
-
+  print(numeros)
 
 rachas_general = []
 def calcular_rachas(lista_numeros, elegido):
@@ -206,7 +206,7 @@ else:
 
 # Gráfico de Frecuencias Relativas
 # Cálculo del promedio entre corridas
-frecuencias_general = []
+"""frecuencias_general = []
 for i in range(tiradas):
     suma = 0
     for j in range(corridas):
@@ -225,11 +225,11 @@ for i in range (corridas):
 
 plt.plot(frecuencias_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
 plt.legend()
-
+"""
 
 # Gráfico de Promedios
 # Cálculo del promedio entre corridas
-promedios_general = []
+"""promedios_general = []
 for i in range(tiradas):
     suma = 0
     for j in range(corridas):
@@ -248,11 +248,11 @@ for i in range (corridas):
 
 plt.plot(promedios_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
 plt.legend()
-
+"""
 
 # Gráfico del Desvío Estándar
 # Cálculo del promedio entre corridas
-desv_estandar_general = []
+"""desv_estandar_general = []
 for i in range(tiradas):
     suma = 0
     for j in range(corridas):
@@ -271,11 +271,11 @@ for i in range (corridas):
 
 plt.plot(desv_estandar_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
 plt.legend()
-
+"""
 
 # Gráfico de la Varianza
 # Cálculo del promedio entre corridas
-varianza_general = []
+"""varianza_general = []
 for i in range(tiradas):
     suma = 0
     for j in range(corridas):
@@ -294,10 +294,10 @@ for i in range (corridas):
 
 plt.plot(varianza_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
 plt.legend()
-
+"""
 
 #plt.subplots_adjust(hspace=0.5, top=0.9)
-
+"""
 fig2, axes = plt.subplots(2, figsize = (12,10)) 
 fig2.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
 
@@ -330,29 +330,29 @@ axes[1].set_xlabel("Longitud de la racha (Tiradas sin ganar)")
 axes[1].set_ylabel("Frecuencia (cuántas veces ocurrió)")
 axes[1].hist(mis_rachas, bins=30, edgecolor= "black", color='skyblue' )
 axes[1].set_xticks(range(0, int(max(mis_rachas)) + 20, 20))
+"""
 
 
-
-
-
-
+# Frecuencia Relativa de Apuesta Favorable de la 1° corrida
 
 plt.figure(figsize=(10,5))
 plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
-plt.title("Frecuencias Relativas de Apuesta Favorable")
+plt.title("Frecuencias Relativas de Apuesta Favorable (1° corrida)")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("fr (frecuencia relativa)")
-
-for i in range (corridas):
- plt.plot(frsa[i], linewidth = 0.5)  # Dibuja el gráfico
-
-plt.plot(varianza_general, linewidth=3, label = "Promedio de todas las corridas", color="red")
-plt.legend()
+tiradas_x = list(range(1, len(frec_rel[0]) + 1))
+plt.bar(tiradas_x, frec_rel[0], color='red', width=0.6, label='frsa obtenida')
 
 
+# Evolución del capitar de la 1° corrida
 
-
-
+plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
+plt.title("Flujo de caja (1° corrida)")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("cc (cantidad de capital)")
+plt.axhline(capital_inicial, linestyle = "--", color = "black", label=f"Capital Inicial: {capital_inicial}")
+plt.plot(capitales[0], linewidth = 0.5)
 
 
 
