@@ -123,6 +123,7 @@ def tirada_ruleta(capital=0):
 
     if resultado == num_elegido:
       gano = True
+<<<<<<< HEAD
       #if tipo_capital == "f":
       capital_actual = capital_actual + apuesta * 36
       capital_prov.append(capital_actual)
@@ -131,6 +132,16 @@ def tirada_ruleta(capital=0):
       #if tipo_capital == "f":
       capital_actual = capital_actual - apuesta
       capital_prov.append(capital_actual)
+=======
+      if tipo_capital == "f":
+        capital_actual = capital_actual + apuesta
+        capital_prov.append(capital_actual)
+    else:
+      gano = False
+      if tipo_capital == "f":
+        capital_actual = capital_actual - apuesta
+        capital_prov.append(capital_actual)
+>>>>>>> parent of 2c09964 (Valido entrada de capital inicial)
 
     if estrategia == "m":
       apuesta = estrategia_martingala(gano, apuesta) 
@@ -151,6 +162,13 @@ def tirada_ruleta(capital=0):
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible y si no alcanza hace all-in
       apuesta = apuesta if capital_actual >= apuesta else capital_actual
 
+<<<<<<< HEAD
+=======
+
+    if tipo_capital == 'f' and capital_actual <= 0:
+      break
+
+>>>>>>> parent of 2c09964 (Valido entrada de capital inicial)
 
   # Calculo de medidas
     fa = numeros.count(num_elegido)
@@ -180,8 +198,11 @@ def tirada_ruleta(capital=0):
   capitales.append(capital_prov)
   print(numeros)
   print(historial_apuestas)
+<<<<<<< HEAD
   print("Longitud:", len(historial_apuestas))
   print(capitales)
+=======
+>>>>>>> parent of 2c09964 (Valido entrada de capital inicial)
 
 
 
@@ -369,7 +390,11 @@ tiradas_x = list(range(1, len(frec_rel[0]) + 1))
 plt.bar(tiradas_x, frec_rel[0], color='red', width=0.6, label='frsa obtenida')
 
 
+<<<<<<< HEAD
 # Evolución del capital de la 1° corrida
+=======
+# Evolución del capitar de la 1° corrida
+>>>>>>> parent of 2c09964 (Valido entrada de capital inicial)
 
 plt.figure(figsize=(10,5))
 plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido} - Estrategia {estrategia} - Capital {tipo_capital}")
@@ -380,6 +405,7 @@ plt.axhline(capital_inicial, linestyle = "--", color = "black", label=f"Capital 
 plt.plot(capitales[0], linewidth = 0.5)
 
 
+<<<<<<< HEAD
 # Evolución del capital de todas las corridas
 
 plt.figure(figsize=(10,5))
@@ -392,6 +418,8 @@ plt.axhline(capital_inicial, linestyle = "--", color = "black", label=f"Capital 
 for i in range(0, corridas):
   plt.plot(capitales[i], linewidth = 0.5)
 
+=======
+>>>>>>> parent of 2c09964 (Valido entrada de capital inicial)
 
 plt.tight_layout()
 plt.subplots_adjust(hspace=0.5, top=0.9)
