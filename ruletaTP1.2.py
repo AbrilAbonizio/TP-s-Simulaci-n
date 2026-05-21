@@ -6,6 +6,8 @@ from cProfile import label
 import matplotlib.pyplot as plt
 import random
 
+
+
 print(sys.argv)
 # Valida que los argumentos sean los correctos
 if (len(sys.argv) != 9 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-s" or sys.argv[7] != "-a"):
@@ -24,7 +26,7 @@ fibonacci = []
 monto_base = 10
 
 # Valores teóricos esperados
-fr_esperada = 18/37 #1/cantidad de numeros
+fr_esperada = 18/37 #cantidad de numeros pares (sin el 0)/cantidad de numeros
 
     
 def estrategia_dalembert(resultado, apuesta):
@@ -93,6 +95,7 @@ def tirada_ruleta(capital=0):
 
   # Inicialización de variables
   capital_actual = capital
+  capital_prov.append(capital_actual)
   apuesta = monto_base
   racha_paroli = 0
   indice_fibonacci = 0
@@ -104,7 +107,7 @@ def tirada_ruleta(capital=0):
 
     if resultado % 2 == 0 and resultado != 0:
       gano = True
-      capital_actual = capital_actual + apuesta * 2
+      capital_actual = capital_actual + apuesta
       capital_prov.append(capital_actual)
     else:
       gano = False
@@ -141,6 +144,7 @@ def tirada_ruleta(capital=0):
   capitales.append(capital_prov)
 
   print(numeros)
+  print("CAPITALES:")
   print(capitales)
   return (capital_actual)
 
