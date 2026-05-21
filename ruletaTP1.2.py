@@ -25,7 +25,7 @@ desv_estandar = []
 varianzas = []
 todos_los_numeros = []
 capitales = []
-frsa = []
+fibonacci = []
 monto_base = 10
 
 
@@ -46,7 +46,7 @@ def estrategia_dalembert(resultado, apuesta):
   else: # Si pierde se aumenta la apuesta en una unidad
     nueva_apuesta = apuesta + monto_base
 
-  return nueva_apuesta
+  return (nueva_apuesta)
 
 
 def estrategia_martingala(resultado_anterior, apuesta_anterior):
@@ -57,44 +57,42 @@ def estrategia_martingala(resultado_anterior, apuesta_anterior):
     return(nueva_apuesta)
 
 
-def estrategia_fibonacci(n, num_elegido, monto, tipo_capital, apuesta, contador, fibonacci, ganancias, frec_rel):
-  if n != num_elegido:
-    if tipo_capital == 'f':
-      monto -= apuesta
-      apuesta = fibonacci[-1] + fibonacci[-2]
-      fibonacci.append(apuesta)
-      bancarrota = 1 if monto <= 0 else 0
-    else: 
-      ganancias = ganancias - apuesta
-      apuesta = fibonacci[-1] + fibonacci[-2]
-      fibonacci.append(apuesta)
-      bancarrota = 0
-  else:
-    if tipo_capital == 'f':
-      monto += apuesta*36
-      if len(fibonacci) > 3:
-        apuesta = fibonacci[-3]
-      fibonacci.append(apuesta)
-      frec_rel[contador] += 1
-    else:
-      ganancias = ganancias + apuesta*36
-      if len(fibonacci)>3:
-        apuesta = fibonacci[-3]
-      fibonacci.append(apuesta)
-    bancarrota = 0 
+def calcular_fibonacci(indice):
+  nuevo = fibonacci[indice] + fibonacci[indice-1]
+  fibonacci.append(nuevo)
+
+
+def estrategia_fibonacci(resultado, indice_fibonacci):
+  if (indice_fibonacci + 1) >= len(fibonacci):
+    calcular_fibonacci(indice_fibonacci)  
   
-  return monto, apuesta, ganancias, bancarrota, fibonacci
+  if resultado: 
+    if indice_fibonacci < 2:
+      indice_fibonacci = 0
+    else: 
+      indice_fibonacci -= 2
+  else:
+    indice_fibonacci += 1
+    
+  nueva_apuesta = fibonacci[indice_fibonacci]
+  return (nueva_apuesta, indice_fibonacci)
 
 
-def estrategia_paroli(resultado_anterior, apuesta_anterior, tipo_capital, capital=0):
+
+def estrategia_paroli(resultado_anterior, apuesta_anterior, tipo_capital, racha, capital=0):
   if resultado_anterior: # Si acaba de ganar, se duplica la apuesta
     nueva_apuesta = apuesta_anterior*2
+    racha += 1
+    if racha == 3:
+        racha = 0
+        nueva_apuesta = monto_base
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible
-      return(nueva_apuesta if capital >= nueva_apuesta else capital)
+      return(nueva_apuesta if capital >= nueva_apuesta else capital, racha)
     else: # Cuando el capital es infinito, la apuesta no está restringida
-      return(nueva_apuesta)
+      return(nueva_apuesta, racha)
   else: # Si antes perdió, se reinicia a la apuesta inicial
-    return(monto_base)
+    racha = 0
+    return(monto_base, racha)
 
 
 def tirada_ruleta(capital=0):
@@ -114,7 +112,8 @@ def tirada_ruleta(capital=0):
 
   capital_actual = capital
   apuesta = monto_base
-  racha = 0
+  racha_paroli = 0
+  indice_fibonacci = 0
 
   for i in range (1, tiradas+1):
     resultado = random.randint(0,36)
@@ -123,7 +122,6 @@ def tirada_ruleta(capital=0):
 
     if resultado == num_elegido:
       gano = True
-      racha += 1
       if tipo_capital == "f":
         capital_actual = capital_actual + apuesta
         capital_prov.append(capital_actual)
@@ -140,14 +138,10 @@ def tirada_ruleta(capital=0):
       apuesta = estrategia_dalembert(gano, apuesta)
       
     elif estrategia == "f":
-      estrategia_fibonacci() #faltan parametros
+      apuesta, indice_fibonacci = estrategia_fibonacci(gano, indice_fibonacci)
     
     elif estrategia == "o":
-      if racha == 3:
-        racha = 0
-        apuesta = monto_base
-      else:
-        apuesta = estrategia_paroli(gano, apuesta, tipo_capital, capital_actual)
+        apuesta, racha_paroli = estrategia_paroli(gano, apuesta, tipo_capital, racha_paroli, capital_actual)
     
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible y si no alcanza hace all-in
       apuesta = apuesta if capital_actual >= apuesta else capital_actual
@@ -212,6 +206,11 @@ else:
     capital_inicial = int(input("Ingrese el monto deseado: "))
   else:
     capital_inicial = 0
+    
+  if estrategia == "f":
+    fibonacci.append(monto_base)
+    fibonacci.append(monto_base) 
+
   for _ in range (0, corridas):
     tirada_ruleta(capital_inicial)
     
