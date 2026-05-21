@@ -26,7 +26,7 @@ varianzas = []
 todos_los_numeros = []
 capitales = []
 frsa = []
-apuesta = 10
+monto_base = 10
 
 
 # Valores teóricos esperados
@@ -38,23 +38,23 @@ desv_estandar_esperado = math.sqrt(varianza_esperada)
 
     
 def estrategia_dalembert(resultado, apuesta):
-  monto_base = 10
-
+  
   if resultado:  # Si gana la tirada, aumenta su capital y disminuye el monto de la proxima apuesta en 1 unidad
-    apuesta -= monto_base
+    nueva_apuesta = apuesta - monto_base
     if apuesta < monto_base:  # El monto de apuesta no puede ser menor al monto base
       apuesta = monto_base
-  else:
-    apuesta += monto_base
+  else: # Si pierde se aumenta la apuesta en una unidad
+    nueva_apuesta = apuesta + monto_base
 
-  return apuesta
+  return nueva_apuesta
 
 
-def estrategia_martingala(apuesta_anterior, resultado_anterior, tipo_capital, capital=0):
+def estrategia_martingala(resultado_anterior, apuesta_anterior):
   if resultado_anterior: # Si acaba de ganar, se reinicia a la apuesta inicial
-    return(apuesta)
+    return(monto_base)
   else: # Si acaba de perder, se duplica la apuesta
-    nueva_apuesta=apuesta_anterior*2
+    nueva_apuesta = apuesta_anterior*2
+    return(nueva_apuesta)
 
 
 def estrategia_fibonacci(n, num_elegido, monto, tipo_capital, apuesta, contador, fibonacci, ganancias, frec_rel):
@@ -86,15 +86,15 @@ def estrategia_fibonacci(n, num_elegido, monto, tipo_capital, apuesta, contador,
   return monto, apuesta, ganancias, bancarrota, fibonacci
 
 
-def estrategia_paroli(apuesta_anterior, resultado_anterior, tipo_capital, capital=0):
+def estrategia_paroli(resultado_anterior, apuesta_anterior, tipo_capital, capital=0):
   if resultado_anterior: # Si acaba de ganar, se duplica la apuesta
-    nueva_apuesta=apuesta_anterior*2
+    nueva_apuesta = apuesta_anterior*2
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible
       return(nueva_apuesta if capital >= nueva_apuesta else capital)
     else: # Cuando el capital es infinito, la apuesta no está restringida
       return(nueva_apuesta)
   else: # Si antes perdió, se reinicia a la apuesta inicial
-    return(apuesta)
+    return(monto_base)
 
 
 def tirada_ruleta(capital=0):
@@ -109,26 +109,32 @@ def tirada_ruleta(capital=0):
   desv_prov = [] 
   var_prov = []
   capital_prov = []
+  historial_apuestas = [] #BORRAR
+
 
   capital_actual = capital
-  apuesta = 10
-  
+  apuesta = monto_base
+  racha = 0
+
   for i in range (1, tiradas+1):
-    resultado = numeros.append(random.randint(0,36))
-   
+    resultado = random.randint(0,36)
+    numeros.append(resultado)
+    historial_apuestas.append(apuesta) #BORRAR
+
     if resultado == num_elegido:
       gano = True
+      racha += 1
       if tipo_capital == "f":
         capital_actual = capital_actual + apuesta
         capital_prov.append(capital_actual)
     else:
+      gano = False
       if tipo_capital == "f":
-        gano = False
         capital_actual = capital_actual - apuesta
         capital_prov.append(capital_actual)
 
     if estrategia == "m":
-      apuesta = estrategia_martingala("apuesta anterior", gano, tipo_capital, capital_actual) 
+      apuesta = estrategia_martingala(gano, apuesta) 
    
     elif estrategia == "d":
       apuesta = estrategia_dalembert(gano, apuesta)
@@ -137,13 +143,17 @@ def tirada_ruleta(capital=0):
       estrategia_fibonacci() #faltan parametros
     
     elif estrategia == "o":
-      apuesta = estrategia_paroli("apuesta anterior", gano, tipo_capital, capital_actual) #faltan parametros
+      if racha == 3:
+        racha = 0
+        apuesta = monto_base
+      else:
+        apuesta = estrategia_paroli(gano, apuesta, tipo_capital, capital_actual)
     
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible y si no alcanza hace all-in
       apuesta = apuesta if capital_actual >= apuesta else capital_actual
 
 
-    if tipo_capital == 'f' and capital_actual <=0:
+    if tipo_capital == 'f' and capital_actual <= 0:
       break
 
 
@@ -169,6 +179,10 @@ def tirada_ruleta(capital=0):
   todos_los_numeros.append(numeros)
   capitales.append(capital_prov)
   print(numeros)
+  print(historial_apuestas)
+
+
+
 
 rachas_general = []
 def calcular_rachas(lista_numeros, elegido):
@@ -187,6 +201,8 @@ def calcular_rachas(lista_numeros, elegido):
       rachas_general.append(rachas_corrida)
 
 
+
+
 # Programa principal
 if (num_elegido<0 or num_elegido>36):
   print ("El numero elegido debe estar entre 0 y 36")
@@ -194,6 +210,8 @@ else:
   # Cantidad de corridas de la ruleta 
   if tipo_capital == "f":
     capital_inicial = int(input("Ingrese el monto deseado: "))
+  else:
+    capital_inicial = 0
   for _ in range (0, corridas):
     tirada_ruleta(capital_inicial)
     
