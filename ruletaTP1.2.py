@@ -6,8 +6,9 @@ from cProfile import label
 import matplotlib.pyplot as plt
 import random
 
+print(sys.argv)
 # Valida que los argumentos sean los correctos
-if (len(sys.argv) != 11 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-s" or sys.argv[7] != "-a"):
+if (len(sys.argv) != 9 or sys.argv[1] != "-c" or sys.argv[3] != "-n" or sys.argv[5] != "-s" or sys.argv[7] != "-a"):
   print("Parámetros Incorrectos")
   sys.exit(1)
 
@@ -107,8 +108,9 @@ def tirada_ruleta(capital=0):
       capital_prov.append(capital_actual)
     else:
       gano = False
-      capital_actual = capital_actual - apuesta * 2
+      capital_actual = capital_actual - apuesta
       capital_prov.append(capital_actual)
+
 
     if estrategia == "m":
       apuesta = estrategia_martingala(gano, apuesta) 
@@ -137,8 +139,10 @@ def tirada_ruleta(capital=0):
 
   frec_rel.append(frec_rel_prov)
   capitales.append(capital_prov)
+
   print(numeros)
   print(capitales)
+  return (capital_actual)
 
 
 rachas_general = []
@@ -161,6 +165,7 @@ def calcular_rachas(lista_numeros, elegido):
 # Programa principal
 # Cantidad de corridas de la ruleta 
 if tipo_capital == "f":
+  capital_inicial = 0
   while capital_inicial <= 0:
     capital_inicial = int(input("Ingrese el monto deseado: "))
     if capital_inicial <= 0:
@@ -172,19 +177,23 @@ if estrategia == "f":
   fibonacci.append(monto_base)
   fibonacci.append(monto_base) 
 
+bancarrotas = 0
+
 for _ in range (0, corridas):
-  tirada_ruleta(capital_inicial)
-    
+  c = tirada_ruleta(capital_inicial)
+  if c == 0 and tipo_capital == "f":
+    bancarrotas += 1
 
 # Frecuencia Relativa de Apuesta Favorable de la 1° corrida
 
 plt.figure(figsize=(10,5))
-plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas")
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - Estrategia {estrategia} - Capital {tipo_capital}")
 plt.title("Frecuencias Relativas de Apuesta Favorable (1° corrida)")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("fr (frecuencia relativa)")
 tiradas_x = list(range(1, len(frec_rel[0]) + 1))
 plt.bar(tiradas_x, frec_rel[0], color='red', width=0.6, label='frsa obtenida')
+plt.axhline(fr_esperada, linestyle = "--", color = "black", label=f"FR Esperada: {fr_esperada}")
 
 
 # Evolución del capital de la 1° corrida
@@ -206,9 +215,12 @@ plt.title("Flujo de caja de todas las corridas")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("cc (cantidad de capital)")
 plt.axhline(capital_inicial, linestyle = "--", color = "black", label=f"Capital Inicial: {capital_inicial}")
+plt.plot([], [], '', label = f"Bancarrota: {bancarrotas}")
+plt.legend(loc = "upper right")
 
 for i in range(0, corridas):
   plt.plot(capitales[i], linewidth = 0.5)
+
 
 
 plt.tight_layout()
