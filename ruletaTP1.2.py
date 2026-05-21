@@ -114,6 +114,7 @@ def tirada_ruleta(capital=0):
   apuesta = monto_base
   racha_paroli = 0
   indice_fibonacci = 0
+  LIMITE_APUESTA = 5000
 
   for i in range (1, tiradas+1):
     resultado = random.randint(0,36)
@@ -122,14 +123,14 @@ def tirada_ruleta(capital=0):
 
     if resultado == num_elegido:
       gano = True
-      if tipo_capital == "f":
-        capital_actual = capital_actual + apuesta
-        capital_prov.append(capital_actual)
+      #if tipo_capital == "f":
+      capital_actual = capital_actual + apuesta * 36
+      capital_prov.append(capital_actual)
     else:
       gano = False
-      if tipo_capital == "f":
-        capital_actual = capital_actual - apuesta
-        capital_prov.append(capital_actual)
+      #if tipo_capital == "f":
+      capital_actual = capital_actual - apuesta
+      capital_prov.append(capital_actual)
 
     if estrategia == "m":
       apuesta = estrategia_martingala(gano, apuesta) 
@@ -143,12 +144,12 @@ def tirada_ruleta(capital=0):
     elif estrategia == "o":
         apuesta, racha_paroli = estrategia_paroli(gano, apuesta, tipo_capital, racha_paroli, capital_actual)
     
+    if tipo_capital == "i":
+     apuesta = min(apuesta, LIMITE_APUESTA)
+
+
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible y si no alcanza hace all-in
       apuesta = apuesta if capital_actual >= apuesta else capital_actual
-
-
-    if tipo_capital == 'f' and capital_actual <= 0:
-      break
 
 
   # Calculo de medidas
@@ -164,7 +165,12 @@ def tirada_ruleta(capital=0):
       # En la primera tirada, el desvío es 0
       desv_prov.append(0.0) 
       var_prov.append(0.0)
-  
+    
+    
+    if tipo_capital == 'f' and capital_actual <= 0:
+      break
+
+
   frec_abs.append(frec_abs_prov)
   frec_rel.append(frec_rel_prov)
   promedios.append(prom_prov)
@@ -174,6 +180,8 @@ def tirada_ruleta(capital=0):
   capitales.append(capital_prov)
   print(numeros)
   print(historial_apuestas)
+  print("Longitud:", len(historial_apuestas))
+  print(capitales)
 
 
 
@@ -361,16 +369,28 @@ tiradas_x = list(range(1, len(frec_rel[0]) + 1))
 plt.bar(tiradas_x, frec_rel[0], color='red', width=0.6, label='frsa obtenida')
 
 
-# Evolución del capitar de la 1° corrida
+# Evolución del capital de la 1° corrida
 
 plt.figure(figsize=(10,5))
-plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido}")
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido} - Estrategia {estrategia} - Capital {tipo_capital}")
 plt.title("Flujo de caja (1° corrida)")
 plt.xlabel("n (número de tiradas)")
 plt.ylabel("cc (cantidad de capital)")
 plt.axhline(capital_inicial, linestyle = "--", color = "black", label=f"Capital Inicial: {capital_inicial}")
 plt.plot(capitales[0], linewidth = 0.5)
 
+
+# Evolución del capital de todas las corridas
+
+plt.figure(figsize=(10,5))
+plt.suptitle(f"{corridas} corridas simultaneas - {tiradas} tiradas - número {num_elegido} - Estrategia {estrategia} - Capital {tipo_capital}")
+plt.title("Flujo de caja de todas las corridas")
+plt.xlabel("n (número de tiradas)")
+plt.ylabel("cc (cantidad de capital)")
+plt.axhline(capital_inicial, linestyle = "--", color = "black", label=f"Capital Inicial: {capital_inicial}")
+
+for i in range(0, corridas):
+  plt.plot(capitales[i], linewidth = 0.5)
 
 
 plt.tight_layout()
