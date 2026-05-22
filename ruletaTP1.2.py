@@ -224,6 +224,10 @@ plt.legend(loc = "upper right")
 
 for i in range(0, corridas):
   plt.plot(capitales[i], linewidth = 0.5)
+  if tipo_capital == 'f' and capitales[i][-1] == 0:
+    ultimo_punto_x = len(capitales[i]) - 1
+    ultimo_punto_y = capitales[i][-1]
+    plt.scatter(ultimo_punto_x, ultimo_punto_y, color='red', s=5, zorder=3)
 
 
 
