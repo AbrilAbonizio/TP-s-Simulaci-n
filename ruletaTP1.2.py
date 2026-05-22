@@ -100,6 +100,7 @@ def tirada_ruleta(capital=0):
   racha_paroli = 0
   indice_fibonacci = 0
   LIMITE_APUESTA = 5000
+  victorias = 0
 
   for i in range (1, tiradas+1):
     resultado = random.randint(0,36)
@@ -109,6 +110,7 @@ def tirada_ruleta(capital=0):
       gano = True
       capital_actual = capital_actual + apuesta
       capital_prov.append(capital_actual)
+      victorias += 1
     else:
       gano = False
       capital_actual = capital_actual - apuesta
@@ -133,9 +135,8 @@ def tirada_ruleta(capital=0):
     if tipo_capital == 'f': # Cuando el capital es finito, la apuesta está restringida al capital disponible y si no alcanza hace all-in
       apuesta = apuesta if capital_actual >= apuesta else capital_actual
 
-  # Calculo de medidas
-    fa = len([n for n in numeros if n % 2 == 0 and n != 0])
-    frec_rel_prov.append(fa/i)
+  # Calculo de frecuencia relativa
+    frec_rel_prov.append(victorias/i)
     
     if tipo_capital == 'f' and capital_actual <= 0:
       break
@@ -143,27 +144,7 @@ def tirada_ruleta(capital=0):
   frec_rel.append(frec_rel_prov)
   capitales.append(capital_prov)
 
-  print(numeros)
-  print("CAPITALES:")
-  print(capitales)
   return (capital_actual)
-
-
-rachas_general = []
-def calcular_rachas(lista_numeros, elegido):
-  for corrida in lista_numeros:
-      rachas_corrida = []
-      contador = 0
-      ultimo_es_elegido = False
-      for tirada in range(len(corrida)):
-        if corrida[tirada] == elegido:
-          rachas_corrida.append(contador)
-          contador = 0  # Reseteamos al encontrar el número
-        else:
-          contador += 1
-          if tirada == len(corrida)-1:
-              rachas_corrida.append(contador)
-      rachas_general.append(rachas_corrida)
 
 
 # Programa principal
