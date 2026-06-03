@@ -1,6 +1,8 @@
 import sys
 import random
 import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as stats
 
 print(sys.argv)
 # Valida que los argumentos sean los correctos
@@ -39,6 +41,7 @@ def generador_GCL(seed):
   
   return seed
 
+
 valores = []
 
 def generador_CM(seed):  # CM = Cuadrados Medios
@@ -75,8 +78,6 @@ def generador_CM(seed):  # CM = Cuadrados Medios
   return seed 
 
 
-
-
 def generador_Mersenne_Twister(seed):
   
   while seed <= 0:
@@ -96,6 +97,56 @@ def generador_Mersenne_Twister(seed):
   return seed
 
 
+def test_chi_cuadrado(sucesion_numeros, tipo, alfa=0.05):
+   
+    datos_originales = sucesion_numeros[1:] # numeros generados sin la semilla
+    
+    # Normalización de los datos
+    if tipo == "GCL":
+      mGCL = pow(2, 32)
+      datos = [x / mGCL for x in datos_originales]
+        
+    elif tipo == "CM":
+      datos = [x / 10000 for x in datos_originales]
+        
+    else: # Solo para generador MT
+      datos = datos_originales 
+
+    
+    print(f" \n  PRUEBA DE CHI-CUADRADO ({tipo})")
+    
+    k = 10
+    intervalos = np.linspace(0.0, 1.0, k + 1) # Define los intervalos
+    observados, _ = np.histogram(datos, bins=intervalos) # Cuenta las frecuencias observadas
+    esperados = longitud_sucesion / k   # Calculo de la frecuencia esperada
+    
+    chi_cuadrado_tabla = [((o_i - esperados) ** 2) / esperados for o_i in observados]
+    estadistico_chi2 = sum(chi_cuadrado_tabla)
+    
+    grados_libertad = k - 1
+    p_valor = 1 - stats.chi2.cdf(estadistico_chi2, grados_libertad)
+
+    print(f"\nCantidad de números evaluados (n): {longitud_sucesion} \nIntervalos: {k} \nFrecuencia esperada por intervalo: {esperados}")
+    print("\n")
+    print("Distribución de los números en los intervalos:")
+    for i in range(k):
+      print(f" Intervalo [{intervalos[i]:.1f} - {intervalos[i+1]:.1f}): Observados = {observados[i]}")
+    print("\n")
+    print(f"Estadístico Chi-cuadrado calculado (X²): {estadistico_chi2:.4f}")
+    print(f"p-valor obtenido: {p_valor:.6f}")
+    print(f"Nivel de significancia (alfa): {alfa}")
+    print("\n")
+    
+
+    if p_valor < alfa:
+      print("SE RECHAZA H0 (Los números NO son uniformes)")
+      print("El generador NO pasa la prueba de uniformidad")
+    else:
+      print("NO SE RECHAZA H0 (Los números son uniformes)")
+      print("El generador PASA la prueba de uniformidad")
+
+
+# PROGRAMA PRINCIPAL 
 if tipo_generador == "GCL":
   seed = generador_GCL(seed) 
 elif tipo_generador == "CM":
@@ -104,6 +155,7 @@ elif tipo_generador == "MT":
   seed = generador_Mersenne_Twister(seed)
 
 
+test_chi_cuadrado(sucesion, tipo_generador)
 
 plt.figure(figsize=(10,5))
 plt.suptitle(f"{longitud_sucesion} números generados - Generador {tipo_generador} - Semilla {seed}")
