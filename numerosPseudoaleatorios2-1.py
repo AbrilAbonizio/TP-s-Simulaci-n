@@ -41,13 +41,11 @@ def generador_GCL(seed):
 
 valores = []
 
-def generador_CM():  # CM = Cuadrados Medios
-   
-  seed = ""
+def generador_CM(seed):  # CM = Cuadrados Medios
     
-  while not seed.isdigit() or int(seed) <= 0 or len(seed) != 4:
-    seed = input("Ingresar la semilla: ")
-    if not seed.isdigit() or int(seed) <= 0 or len(seed) != 4:
+  while seed <= 0 or len(str(seed)) != 4:
+    seed = int(input("Ingresar la semilla: "))
+    if seed <= 0 or len(str(seed)) != 4:
       print("La semilla debe ser un valor entero mayor a 0 y de 4 dígitos")
   
     
@@ -78,12 +76,32 @@ def generador_CM():  # CM = Cuadrados Medios
 
 
 
+
+def generador_Mersenne_Twister(seed):
+  
+  while seed <= 0:
+    seed = int(input("Ingresar la semilla: "))
+    if seed <= 0:
+      print("La semilla debe ser un valor entero mayor a 0")
+  
+  random.seed(seed)
+  sucesion.append(seed)
+
+  for _ in range(0, longitud_sucesion):
+    sucesion.append(random.random())
+  
+
+  print("Los " + str(longitud_sucesion) + " generados son: ")
+  print(sucesion[1:])
+  return seed
+
+
 if tipo_generador == "GCL":
   seed = generador_GCL(seed) 
 elif tipo_generador == "CM":
-  seed = generador_CM()
-
-
+  seed = generador_CM(seed)
+elif tipo_generador == "MT":
+  seed = generador_Mersenne_Twister(seed)
 
 
 
