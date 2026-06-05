@@ -131,7 +131,7 @@ def generador_GCL(seed):
     if seed <= 0 or seed >= mGCL:
       print("La semilla debe ser un valor entero entre 0 y 4.294.967.296")
 
-  a = random.randint(0,mGCL-1 // 4) * 4 + 1  
+  a = random.randint(0,(mGCL-1) // 4) * 4 + 1  
   c = random.randint(0,mGCL-1)
   c = c | 1 # Fuerza que sea impar
   
@@ -312,7 +312,6 @@ def test_rachas(cadena, pi):
         print("NO PASA pre-test -> NO PASA el test de rachas")
   else:
     print("PASA pre-test")
-    print()
     print("TEST DE RACHAS")
     
     saltos = 0
@@ -366,16 +365,16 @@ plt.figure(figsize=(10,5))
 plt.suptitle("Números Aleatorio - Generador random.org")
 plt.xlabel("n")
 plt.ylabel("res (Número Obtenido)")
-plt.scatter(generacion, numeros_aleatorios, color='red', s=10, label='Número Obtenido')
 
+if longitud_sucesion <= len(numeros_aleatorios):
+  numeros_a_graficar = numeros_aleatorios[:longitud_sucesion]
+  eje_x_random = list(range(1, longitud_sucesion + 1))
+else:
+  numeros_a_graficar = numeros_aleatorios
+  eje_x_random = list(range(1, len(numeros_aleatorios) + 1))
 
-#plt.figure(figsize=(10,5))
-#plt.suptitle(f"{longitud_sucesion} números generados - Generador {tipo_generador} - Semilla {seed}")
-#plt.title("Números generados")
-#plt.xlabel("n")
-#plt.ylabel("res (Número generado)")
-#generacion = list(range(1, longitud_sucesion + 1))
-#plt.scatter(generacion, sucesion, color='red', s=10, label='Número generado')
+plt.scatter(eje_x_random, numeros_a_graficar, color='red', s=10, label='Número Obtenido')
+plt.legend()
 
 plt.tight_layout()
 plt.subplots_adjust(hspace=0.5, top=0.9)
