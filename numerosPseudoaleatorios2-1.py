@@ -3,6 +3,7 @@ import random
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stats
+import math
 
 print(sys.argv)
 # Valida que los argumentos sean los correctos
@@ -14,6 +15,8 @@ tipo_generador = str(sys.argv[2])
 longitud_sucesion = int(sys.argv[4])
 
 sucesion = []
+sucesion_real = []
+sucesion_binario = []
 seed = 0
 
 numeros_aleatorios = [
@@ -121,13 +124,12 @@ numeros_aleatorios = [
 ]
 
 def generador_GCL(seed):
-  
+  global sucesion_binario
   mGCL = pow(2,32) 
   while seed <= 0 or seed >= mGCL:
     seed = int(input("Ingresar la semilla: "))
     if seed <= 0 or seed >= mGCL:
       print("La semilla debe ser un valor entero entre 0 y 4.294.967.296")
-  #sucesion.append(seed)
 
   a = random.randint(0,mGCL-1 // 4) * 4 + 1  
   c = random.randint(0,mGCL-1)
@@ -137,28 +139,25 @@ def generador_GCL(seed):
   
   for i in range(0,longitud_sucesion):
     valor = (a*valor+c) % mGCL
-    sucesion.append(valor/mGCL)
+    sucesion.append(valor)
+    sucesion_real.append(valor/mGCL)
 
+  sucesion_binario = entero_a_binario(sucesion,32)  
 
   print("a utilizado = " + str(a))
   print("c utilizado = " + str(c))
   print("m utilizado = " + str(mGCL))
-  print("Los " + str(longitud_sucesion) + " generados son: ")
-  print(sucesion)
   
   return seed
 
 
 def generador_CM(seed):  # CM = Cuadrados Medios
-    
+  global sucesion_binario
   while seed <= 0 or len(str(seed)) != 4:
     seed = int(input("Ingresar la semilla: "))
     if seed <= 0 or len(str(seed)) != 4:
       print("La semilla debe ser un valor entero mayor a 0 y de 4 dígitos")
   
-    
-  #seed_entero = int(seed)
-  #sucesion.append(seed_entero)
   nueva_semilla = int(seed)
 
   for _ in range(0, longitud_sucesion):
@@ -172,30 +171,34 @@ def generador_CM(seed):  # CM = Cuadrados Medios
     centro = valor_str[2:6]
     nueva_semilla = int(centro)
 
-    sucesion.append(nueva_semilla/10000)
+    sucesion.append(nueva_semilla)
+    sucesion_real.append(nueva_semilla/10000)
 
+  sucesion_binario = entero_a_binario(sucesion, 14) # La representación en binario de la salida ocupa como max 14 bits
   
-  print("Los " + str(longitud_sucesion) + " generados son: ")
-  print(sucesion)
   return seed 
 
 
 def generador_Mersenne_Twister(seed):
-  
+  global sucesion_binario
   while seed <= 0:
     seed = int(input("Ingresar la semilla: "))
     if seed <= 0:
       print("La semilla debe ser un valor entero mayor a 0")
   
   random.seed(seed)
-  #sucesion.append(seed)
+
+  m_mt = pow(2,32)
 
   for _ in range(0, longitud_sucesion):
-    sucesion.append(random.random())
-  
+    numero_entero = random.getrandbits(32)
+    sucesion.append(numero_entero)
 
-  print("Los " + str(longitud_sucesion) + " generados son: ")
-  print(sucesion)
+    numero_real = numero_entero / m_mt
+    sucesion_real.append(numero_real)
+  
+  sucesion_binario = entero_a_binario(sucesion, 32)
+
   return seed
 
 
@@ -246,6 +249,94 @@ def test_chi_cuadrado(sucesion_numeros, tipo, alfa=0.05):
     print("El generador PASA la prueba de uniformidad")
 
 
+def test_frecuencia_monobit(cadena):
+  n = len(cadena)
+  print("----------TEST FRECUENCIA MONOBIT---------------")
+  print("Funciona mejor en cadenas de más de 100 bits. La cadena tiene ", n, " bits.")
+
+  cant_unos = cadena.count('1')
+  cant_ceros = n - cant_unos
+  suma_monobit = cant_unos - cant_ceros
+
+  estadistico_prueba = abs(suma_monobit) / math.sqrt(n)
+
+  p_value =   math.erfc(estadistico_prueba / math.sqrt(2))
+
+  if p_value < 0.01:
+    print("El generador NO PASA la prueba de frecuencia monobit.")
+  else:
+    print("El generador PASA la prueba de frecuencia monobit.")
+  
+  return cant_unos / n
+  
+
+
+def test_frecuencia_bloque(cadena):
+  n = len(cadena)
+
+  print("----------TEST FRECUENCIA DENTRO DEL BLOQUE---------------")
+  print("Funciona mejor en cadenas de más de 100 bits. La cadena tiene ", n, " bits.")
+
+  cant_bloques_max = min(99, n // 20)
+
+  if cant_bloques_max < 2:
+    print("La cadena es demasiado corta para hacer un test válido.")
+
+  else:
+    cant_bloques = random.randint(2, cant_bloques_max)
+    tam_bloque = n // cant_bloques
+    print("Se usarán ", cant_bloques, " bloques de ", tam_bloque, " bits cada uno.")
+
+    proporciones = [ # Array con la proporcion de 1s en cada bloque
+      cadena[i:i + tam_bloque].count('1') / tam_bloque 
+      for i in range(0, cant_bloques * tam_bloque, tam_bloque)
+      ]
+    suma_desvios = sum((pi - 0.5)**2 for pi in proporciones)
+    chi_sq_obs = 4 * tam_bloque * suma_desvios
+
+    p_value = stats.chi2.sf(chi_sq_obs, cant_bloques)
+
+    if p_value < 0.01:
+      print("El generador NO PASA la prueba de frecuencia de bloque.")
+    else:
+      print("El generador PASA la prueba de frecuencia de bloque.")
+
+
+def test_rachas(cadena, pi):
+  n = len(cadena)
+  print("----------TEST DE RACHAS---------------")
+  print("Funciona mejor en cadenas de más de 100 bits. La cadena tiene ", n, " bits.")
+  print()
+  print("PRE-TEST:")
+  if abs(pi - 0.5) >= 2 / math.sqrt(n):
+        print("NO PASA pre-test -> NO PASA el test de rachas")
+  else:
+    print("PASA pre-test")
+    print()
+    print("TEST DE RACHAS")
+    
+    saltos = 0
+
+    for i in range(n-1):
+      if cadena[i] != cadena[i+1]:
+        saltos += 1
+    
+    vn_obs = saltos + 1
+
+    num = abs(vn_obs - 2 * n * pi * (1 - pi))
+    den = 2 * math.sqrt(2 * n) * pi * (1 - pi)
+    p_value = math.erfc(num / den)
+
+    if p_value < 0.01:
+      print("El generador NO PASA la prueba de rachas.")
+    else:
+      print("El generador PASA la prueba de rachas.")  
+
+
+def entero_a_binario(lista_enteros, cant_bits):
+  return "".join(f"{num:0{cant_bits}b}" for num in lista_enteros)
+
+
 # PROGRAMA PRINCIPAL 
 if tipo_generador == "GCL":
   seed = generador_GCL(seed) 
@@ -254,8 +345,13 @@ elif tipo_generador == "CM":
 elif tipo_generador == "MT":
   seed = generador_Mersenne_Twister(seed)
 
+test_chi_cuadrado(sucesion_real, tipo_generador)
 
-test_chi_cuadrado(sucesion, tipo_generador)
+pi_monobit = test_frecuencia_monobit(sucesion_binario)
+
+test_frecuencia_bloque(sucesion_binario)
+
+test_rachas(sucesion_binario, pi_monobit)
 
 
 plt.figure(figsize=(10,5))
