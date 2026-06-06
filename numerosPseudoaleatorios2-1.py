@@ -215,10 +215,11 @@ def test_chi_cuadrado(sucesion_numeros, tipo, alfa=0.05):
   if tipo == "MT": # Solo para generador MT
     datos = sucesion_numeros 
 
-    
+  
   print(f" \n  PRUEBA DE CHI-CUADRADO ({tipo})")
     
   k = 10
+  longitud_sucesion = len(sucesion_numeros)
   intervalos = np.linspace(0.0, 1.0, k + 1) # Define los intervalos
   observados, _ = np.histogram(sucesion_numeros, bins=intervalos) # Cuenta las frecuencias observadas
   esperados = longitud_sucesion / k   # Calculo de la frecuencia esperada
@@ -352,6 +353,13 @@ test_frecuencia_bloque(sucesion_binario)
 
 test_rachas(sucesion_binario, pi_monobit)
 
+# Test numeros aleatorios
+aleatorios_enteros = [int(i * (2**13)) for i in numeros_aleatorios] # Se sacrifica precisión para obtener un resultado no sesgado por el espacio de valores sobrantes.
+aleatorios_binarios = entero_a_binario(aleatorios_enteros, 13)
+test_chi_cuadrado(numeros_aleatorios, "random.org")
+pi_monobit = test_frecuencia_monobit(aleatorios_binarios)
+test_frecuencia_bloque(aleatorios_binarios)
+test_rachas(aleatorios_binarios, pi_monobit)
 
 plt.figure(figsize=(10,5))
 plt.suptitle(f"{longitud_sucesion} números generados - Generador {tipo_generador} - Semilla {seed}")
