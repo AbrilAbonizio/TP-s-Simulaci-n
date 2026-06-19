@@ -46,6 +46,8 @@ for _ in range(longitud_sucesion):
             sucesion.append(valores[i])
             break
 
+sucesion = np.array(sucesion)
+
 # ==========================================
 # GRAFICO
 # ==========================================

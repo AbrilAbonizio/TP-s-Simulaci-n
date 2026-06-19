@@ -18,12 +18,12 @@ for _ in range(longitud_sucesion):
 
     sucesion.append(x)
 
-#print(sucesion)
-
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stats
 import math
+
+sucesion = np.array(sucesion)
 
 valores_unicos, conteos = np.unique(sucesion, return_counts=True)
 frecuencias_relativas = conteos / longitud_sucesion
@@ -41,39 +41,56 @@ plt.legend()
 plt.show()
 
 
-def test_chi_cuadrado(sucesion_numeros, tipo, alfa=0.05):
-    print(f" \n  PRUEBA DE CHI-CUADRADO ({tipo})")
+def test_chi_cuadrado(alfa=0.05):
 
-    k = 10
-    longitud_sucesion = len(sucesion_numeros)
-    intervalos = np.linspace(0.0, 1.0, k + 1)  # Define los intervalos
-    observados, _ = np.histogram(sucesion_numeros, bins=intervalos)  # Cuenta las frecuencias observadas
-    esperados = longitud_sucesion / k  # Calculo de la frecuencia esperada
+    print("\n========== CHI-CUADRADO ==========")
 
-    chi_cuadrado_tabla = [((o_i - esperados) ** 2) / esperados for o_i in observados]
-    estadistico_chi2 = sum(chi_cuadrado_tabla)
+    max_val = int(np.max(sucesion))
+    x_vals = np.arange(0, max_val + 1)
 
-    grados_libertad = k - 1
-    p_valor = 1 - stats.chi2.cdf(estadistico_chi2, grados_libertad)
+    observados = []
+    esperados = []
 
-    print(
-        f"\nCantidad de números evaluados (n): {longitud_sucesion} \nIntervalos: {k} \nFrecuencia esperada por intervalo: {esperados}")
-    print("\n")
-    print("Distribución de los números en los intervalos:")
-    for i in range(k):
-        print(f" Intervalo [{intervalos[i]:.1f} - {intervalos[i + 1]:.1f}): Observados = {observados[i]}")
-    print("\n")
-    print(f"Estadístico Chi-cuadrado calculado (X²): {estadistico_chi2:.4f}")
-    print(f"p-valor obtenido: {p_valor:.6f}")
-    print(f"Nivel de significancia (alfa): {alfa}")
-    print("\n")
+    for x in x_vals:
+        obs = np.sum(sucesion == x)
+        esp = stats.poisson.pmf(x, mu=parametro) * longitud_sucesion
+        if esp >= 5:
+            observados.append(obs)
+            esperados.append(esp)
+
+    resto_obs = 0
+    resto_esp = 0.0
+    for x in x_vals:
+        obs = np.sum(sucesion == x)
+        esp = stats.poisson.pmf(x, mu=parametro) * longitud_sucesion
+        if esp < 5:
+            resto_obs += obs
+            resto_esp += esp
+
+    if resto_esp >= 5:
+        observados.append(resto_obs)
+        esperados.append(resto_esp)
+
+    if len(esperados) < 2:
+        print("No hay suficientes categorias con frecuencia esperada >= 5 para realizar el test.")
+        return
+
+    observados = np.array(observados)
+    esperados = np.array(esperados)
+
+    chi2 = np.sum((observados - esperados) ** 2 / esperados)
+
+    grados_libertad = len(esperados) - 1
+
+    p_valor = 1 - stats.chi2.cdf(chi2, grados_libertad)
+
+    print(f"Chi2 = {chi2:.4f}")
+    print(f"p-valor = {p_valor:.6f}")
 
     if p_valor < alfa:
-        print("SE RECHAZA H0 (Los números NO son uniformes)")
-        print("El generador NO pasa la prueba de uniformidad")
+        print("SE RECHAZA H0")
     else:
-        print("NO SE RECHAZA H0 (Los números son uniformes)")
-        print("El generador PASA la prueba de uniformidad")
+        print("NO SE RECHAZA H0")
 
 
 def test_general(eTeorica, vTeorica):
@@ -120,3 +137,4 @@ def test_general(eTeorica, vTeorica):
 eTeorica = parametro
 vTeorica = parametro
 test_general(eTeorica, vTeorica)
+test_chi_cuadrado()
