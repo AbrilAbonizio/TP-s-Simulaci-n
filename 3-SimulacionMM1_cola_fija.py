@@ -1,28 +1,6 @@
 import random
 import math
 
-
-def solicitar_flotante_positivo(mensaje):
-    while True:
-        try:
-            valor = float(input(mensaje))
-            if valor > 0:
-                return valor
-            print("El número debe ser mayor a 0")
-        except ValueError:
-            print("Ingrese un número válido (ejemplo: 4 o 2.5)")
-
-def solicitar_entero_positivo_o_cero(mensaje):
-    while True:
-        try:
-            valor = int(input(mensaje))
-            if valor >= 0:
-                return valor
-            print("El número debe ser 0 o mayor")
-        except ValueError:
-            print("Ingrese un número entero válido (ejemplo: 5)")
-
-
 # INGRESO DE PARAMETROS POR CONSOLA
 mu = 0
 while mu <= 0:
