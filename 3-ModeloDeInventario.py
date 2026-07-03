@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 
 # INGRESO DE PARAMETROS POR CONSOLA
-i=True
 costo_orden_fijo=0
 while costo_orden_fijo<=0:
   try:
@@ -60,7 +59,7 @@ punto_pedido_s = 20        # s: si el stock baja de 20, se pide
 stock_maximo_S = 100       # S: se pide hasta alcanzar 100 unidades
 demanda_media = 8          # promedio de unidades vendidas por día
 tiempo_entrega = 3         # días que tarda el proveedor en traer el pedido
-repeticiones = 10          # Mínimo de 10 corridas exigido por el TP
+repeticiones = 10          
 
 
 # SIMULACIÓN DE INVENTARIO
@@ -70,7 +69,8 @@ def simular_inventario():
     pedido_en_camino = False
     dias_para_entrega = 0
     cantidad_ordenada = 0
-    
+    backorder_pendiente = 0
+
     # Contadores de costos 
     total_costo_orden = 0.0
     total_costo_mantenimiento = 0.0
@@ -78,6 +78,8 @@ def simular_inventario():
 
     # Historiales los gráficos
     historial_stock = []
+    historial_backorder = []
+    historial_posicion = []
     historial_costos_acum = []
 
     for dia in range(1, dias_simulacion + 1):
@@ -87,22 +89,31 @@ def simular_inventario():
             if dias_para_entrega == 0:
                 inventario_actual += cantidad_ordenada
                 pedido_en_camino = False
+                cantidad_ordenada = 0
+
+        # Se atienden primero los pedidos pendientes acumulados
+        if backorder_pendiente > 0 and inventario_actual > 0:
+            unidades_atendidas = min(inventario_actual, backorder_pendiente)
+            inventario_actual -= unidades_atendidas
+            backorder_pendiente -= unidades_atendidas
 
         # Generacion de la demanda
         demanda_del_dia = random.poissonvariate(demanda_media) if hasattr(random, 'poissonvariate') else int(random.gauss(demanda_media, 2))
         demanda_del_dia = max(0, demanda_del_dia)
 
-        inventario_actual -= demanda_del_dia
+        if inventario_actual >= demanda_del_dia:
+            inventario_actual -= demanda_del_dia
+        else:
+            backorder_pendiente += demanda_del_dia - inventario_actual
+            inventario_actual = 0
 
         # Evaluacion de costos
-        if inventario_actual >= 0:
-            total_costo_mantenimiento += inventario_actual * costo_mant_unitario
-        else:
-            total_costo_faltante += abs(inventario_actual) * costo_faltante_unitario
+        total_costo_mantenimiento += inventario_actual * costo_mant_unitario
+        total_costo_faltante += backorder_pendiente * costo_faltante_unitario
 
         # Politicas de control
-        # Inventario neto = actual + lo que tiene que llegar
-        inventario_neto = inventario_actual + (cantidad_ordenada if pedido_en_camino else 0)
+        # Inventario neto = stock disponible + lo que tiene que llegar - pedidos pendientes
+        inventario_neto = inventario_actual + (cantidad_ordenada if pedido_en_camino else 0) - backorder_pendiente
         
         if inventario_neto <= punto_pedido_s and not pedido_en_camino:
             cantidad_ordenada = stock_maximo_S - inventario_actual
@@ -111,7 +122,10 @@ def simular_inventario():
             dias_para_entrega = tiempo_entrega
 
         # Guardado de estado diario
+        posicion_inventario = inventario_actual + (cantidad_ordenada if pedido_en_camino else 0) - backorder_pendiente
         historial_stock.append(inventario_actual)
+        historial_backorder.append(backorder_pendiente)
+        historial_posicion.append(posicion_inventario)
         historial_costos_acum.append(total_costo_orden + total_costo_mantenimiento + total_costo_faltante)
 
     return {
@@ -120,6 +134,8 @@ def simular_inventario():
         'c_falt': total_costo_faltante,
         'c_total': total_costo_orden + total_costo_mantenimiento + total_costo_faltante,
         'hist_stock': historial_stock,
+        'hist_backorder': historial_backorder,
+        'hist_posicion': historial_posicion,
         'hist_costos': historial_costos_acum
     }
 
@@ -167,9 +183,10 @@ if datos_grafico:
     
     dias = list(range(1, dias_simulacion + 1))
     
-    # Gráfico de Evolución del Stock
+    # Gráfico de Evolución del Stock y la Posición de Inventario
     plt.figure(figsize=(10, 4))
     plt.plot(dias, datos_grafico['hist_stock'], label='Nivel de Stock')
+    plt.plot(dias, datos_grafico['hist_posicion'], label='Posición de Inventario', linewidth=2)
     plt.axhline(y=punto_pedido_s, color='r', linestyle='--', label='Punto de Pedido (s)')
     plt.axhline(y=0, color='black', linewidth=0.8, linestyle=':')
     plt.title('Evolución Temporal del Inventario')
@@ -177,7 +194,17 @@ if datos_grafico:
     plt.ylabel('Unidades Disponibles')
     plt.legend(loc='upper right')
     plt.tight_layout()
-    plt.show()
+    
+
+    # Gráfico de Pedidos Pendientes
+    plt.figure(figsize=(10, 4))
+    plt.plot(dias, datos_grafico['hist_backorder'], label='Pedidos Pendientes', color='tab:orange')
+    plt.title('Evolución de Pedidos Pendientes')
+    plt.xlabel('Días')
+    plt.ylabel('Unidades pendientes')
+    plt.legend(loc='upper right')
+    plt.tight_layout()
+    
 
     # Gráfico de Costos Acumulados
     plt.figure(figsize=(10, 4))
