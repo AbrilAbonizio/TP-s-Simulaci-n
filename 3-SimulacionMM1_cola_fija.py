@@ -1,5 +1,6 @@
 import random
 import math
+import matplotlib.pyplot as plt
 
 # INGRESO DE PARAMETROS POR CONSOLA
 mu = 0
@@ -18,6 +19,11 @@ dt = 0.01
 repeticiones = 10          
 porcentajes = [0.25, 0.50, 0.75, 1.00, 1.25]
 tamaños_cola_a_probar = [0, 2, 5, 10, 50]
+
+cola_graficos = 5
+datos_hist_n = None
+lista_tiempos_sistema_grafico = []
+lista_tiempos_cola_grafico = []
 
 
 # SIMULACION M/M/1
@@ -151,7 +157,11 @@ for capacidad_actual in tamaños_cola_a_probar:
             for n in acum_prob_n:
                 acum_prob_n[n] += resultado['probabilidades_n'][n]
 
-        
+            if capacidad_actual == cola_graficos and porcentaje == 0.75 and rep == 0:
+                datos_hist_n = {k: v for k, v in resultado['probabilidades_n'].items()}
+                lista_tiempos_sistema_grafico = resultado['tiempos_sistema']
+                lista_tiempos_cola_grafico = resultado['tiempos_cola']
+
         prom_en_cola = acum_en_cola / repeticiones
         prom_en_sistema = acum_en_sistema / repeticiones
         prom_espera_cola = acum_espera_cola / repeticiones
@@ -170,3 +180,62 @@ for capacidad_actual in tamaños_cola_a_probar:
     
         string_probs = ", ".join([f"P({n})={acum_prob_n[n]/repeticiones:.2%}" for n in range(min(3, capacidad_actual+1))])
         print(f"  Probabilidad de n clientes en cola: {string_probs} ...")
+
+
+if datos_hist_n:
+    
+    #Gráfico de barras horizontales
+    plt.figure(figsize=(6, 5))
+    clientes = list(datos_hist_n.keys())
+    probabilidades = list(datos_hist_n.values())
+    
+    # Calcular acumulada
+    acumulada_n = []
+    suma_temp = 0
+    for p in probabilidades:
+        suma_temp += p
+        acumulada_n.append(suma_temp)
+        
+    plt.barh(clientes, probabilidades, label='Discreta', height=0.4)
+    plt.plot(acumulada_n, clientes, marker='o', label='Acumulada', linewidth=2)
+    
+    plt.gca().invert_yaxis()  # Invertir eje Y para que el 0 quede arriba
+    plt.title('Probabilidad Discreta', fontsize=14, pad=15)
+    plt.xlabel('Probabilidad')
+    plt.ylabel('Clientes')
+    plt.xlim(-0.05, 1.25)
+    plt.yticks(clientes)
+    plt.legend(loc='upper right', bbox_to_anchor=(0.5, -0.15), ncol=2, frameon=False)
+    plt.tight_layout()
+    plt.show()
+
+    # Grafico 2 de tiempo
+    plt.figure(figsize=(6, 5))
+    
+    # Ordenar datos para armar la función de probabilidad acumulada
+    if lista_tiempos_sistema_grafico and lista_tiempos_cola_grafico:
+        ts_ordenados = sorted(lista_tiempos_sistema_grafico)
+        tq_ordenados = sorted(lista_tiempos_cola_grafico)
+        
+       
+        pasos_grafico = 10
+        indices_ts = [int(i * (len(ts_ordenados) - 1) / (pasos_grafico - 1)) for i in range(pasos_grafico)]
+        indices_tq = [int(i * (len(tq_ordenados) - 1) / (pasos_grafico - 1)) for i in range(pasos_grafico)]
+        
+        puntos_x_ts = [ts_ordenados[idx] for idx in indices_ts]
+        puntos_y_ts = [indices_ts[i] / len(ts_ordenados) for i in range(pasos_grafico)]
+        
+        puntos_x_tq = [tq_ordenados[idx] for idx in indices_tq]
+        puntos_y_tq = [indices_tq[i] / len(tq_ordenados) for i in range(pasos_grafico)]
+        
+        plt.plot(puntos_x_ts, puntos_y_ts, marker='o', label='Tiempo en sistema', linewidth=2)
+        plt.plot(puntos_x_tq, puntos_y_tq, marker='d', label='Tiempo en cola', linewidth=1.5)
+        
+        plt.title('Probabilidad Basada en el Tiempo', fontsize=14, pad=15)
+        plt.xlabel('Tiempo Transcurrido')
+        plt.ylabel('Probabilidad Acumulada')
+        plt.ylim(-0.05, 1.25)
+        plt.xticks(rotation=45)
+        plt.legend(loc='upper right', bbox_to_anchor=(0.5, -0.2), ncol=2, frameon=False)
+        plt.tight_layout()
+        plt.show()
