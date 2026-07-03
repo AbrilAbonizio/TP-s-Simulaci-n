@@ -4,45 +4,55 @@ import matplotlib.pyplot as plt
 
 
 # INGRESO DE PARAMETROS POR CONSOLA
-
+i=True
 costo_orden_fijo=0
-while costo_orden_fijo<0:
+while costo_orden_fijo<=0:
   try:
     costo_orden_fijo = float(input("Ingrese el Costo de realizar una orden (K): "))
-    if costo_orden_fijo<0:
+    if costo_orden_fijo>0:
+      break
+    else:
         print("El número debe ser mayor a 0")
   except:
     print("Ingrese un número válido (ej: 10.5)")
 
 
 costo_mant_unitario=0
-while costo_mant_unitario<0:
+while costo_mant_unitario<=0:
   try:
-    costo_mant_unitario = float(input("Ingrese el Costo de realizar una orden (K): "))
-    if costo_mant_unitario<0:
+    costo_mant_unitario = float(input("Ingrese el Costo de Mantenimiento (por unidad) (h): "))
+    if costo_mant_unitario>0:
+        break
+    else:
         print("El número debe ser mayor a 0")
   except:
     print("Ingrese un número válido (ej: 10.5)")
 
 
 costo_faltante_unitario=0
-while costo_faltante_unitario<0:
+while costo_faltante_unitario<=0:
   try:
-    costo_faltante_unitario = float(input("Ingrese el Costo de realizar una orden (K): "))
-    if costo_faltante_unitario<0:
+    costo_faltante_unitario = float(input("Ingrese el Costo por Faltantes (por unidad) (p): "))
+    if costo_faltante_unitario>0:
+      break
+    else:
         print("El número debe ser mayor a 0")
   except:
     print("Ingrese un número válido (ej: 10.5)")
 
 
 dias_simulacion=0
-while dias_simulacion<0:
+while dias_simulacion<=0:
   try:
-    dias_simulacion = int(input("Ingrese el Costo de realizar una orden (K): "))
-    if dias_simulacion<0:
+    dias_simulacion = int(input("Ingrese los dias totales de simulacion: "))
+    if dias_simulacion>0:
+        break
+    else:
         print("El número debe ser mayor a 0")
   except:
     print("Ingrese un número válido (ej: 100)")
+
+
 
 #Valores fijos de politica y demanda
 
@@ -51,7 +61,6 @@ stock_maximo_S = 100       # S: se pide hasta alcanzar 100 unidades
 demanda_media = 8          # promedio de unidades vendidas por día
 tiempo_entrega = 3         # días que tarda el proveedor en traer el pedido
 repeticiones = 10          # Mínimo de 10 corridas exigido por el TP
-print("-" * 50)
 
 
 # SIMULACIÓN DE INVENTARIO
@@ -67,7 +76,10 @@ def simular_inventario():
     total_costo_mantenimiento = 0.0
     total_costo_faltante = 0.0
 
-    #
+    # Historiales los gráficos
+    historial_stock = []
+    historial_costos_acum = []
+
     for dia in range(1, dias_simulacion + 1):
         #Llega el pedido
         if pedido_en_camino:
@@ -98,14 +110,17 @@ def simular_inventario():
             pedido_en_camino = True
             dias_para_entrega = tiempo_entrega
 
-        #
+        # Guardado de estado diario
+        historial_stock.append(inventario_actual)
+        historial_costos_acum.append(total_costo_orden + total_costo_mantenimiento + total_costo_faltante)
 
     return {
         'c_orden': total_costo_orden,
         'c_mant': total_costo_mantenimiento,
         'c_falt': total_costo_faltante,
         'c_total': total_costo_orden + total_costo_mantenimiento + total_costo_faltante,
-
+        'hist_stock': historial_stock,
+        'hist_costos': historial_costos_acum
     }
 
 
@@ -115,7 +130,8 @@ acum_mant = 0
 acum_falt = 0
 acum_total = 0
 
-
+# Datos de la primer corrida
+datos_grafico = None
 
 for rep in range(1, repeticiones + 1):
     res = simular_inventario()
@@ -145,3 +161,30 @@ print(f"  Costo de Faltante Promedio:      ${prom_falt:.2f}")
 print(f"  COSTO TOTAL PROMEDIO:            ${prom_total:.2f}")
 print("="*60)
 
+# GENERACIÓN DE GRÁFICOS 
+
+if datos_grafico:
+    
+    dias = list(range(1, dias_simulacion + 1))
+    
+    # Gráfico de Evolución del Stock
+    plt.figure(figsize=(10, 4))
+    plt.plot(dias, datos_grafico['hist_stock'], label='Nivel de Stock')
+    plt.axhline(y=punto_pedido_s, color='r', linestyle='--', label='Punto de Pedido (s)')
+    plt.axhline(y=0, color='black', linewidth=0.8, linestyle=':')
+    plt.title('Evolución Temporal del Inventario')
+    plt.xlabel('Días')
+    plt.ylabel('Unidades Disponibles')
+    plt.legend(loc='upper right')
+    plt.tight_layout()
+    plt.show()
+
+    # Gráfico de Costos Acumulados
+    plt.figure(figsize=(10, 4))
+    plt.plot(dias, datos_grafico['hist_costos'], label='Costo Total Acumulado')
+    plt.title('Evolución del Costo Total en Relación al Tiempo')
+    plt.xlabel('Días')
+    plt.ylabel('Dinero ($)')
+    plt.legend(loc='upper left')
+    plt.tight_layout()
+    plt.show()
