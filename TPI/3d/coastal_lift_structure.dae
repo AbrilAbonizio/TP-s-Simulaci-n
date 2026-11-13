@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset><contributor><authoring_tool>Low-poly coastal lift model generator</authoring_tool></contributor><created>2026-10-12T00:00:00</created><modified>2026-10-12T00:00:00</modified><unit name="meter" meter="1"/><up_axis>Z_UP</up_axis></asset>
+<library_effects><effect id="fx_red"><profile_COMMON><technique sid="common"><lambert><diffuse><color>0.78 0.025 0.018 1</color></diffuse></lambert></technique></profile_COMMON></effect><effect id="fx_dark"><profile_COMMON><technique sid="common"><lambert><diffuse><color>0.16 0.17 0.18 1</color></diffuse></lambert></technique></profile_COMMON></effect><effect id="fx_concrete"><profile_COMMON><technique sid="common"><lambert><diffuse><color>0.43 0.43 0.41 1</color></diffuse></lambert></technique></profile_COMMON></effect><effect id="fx_steel"><profile_COMMON><technique sid="common"><lambert><diffuse><color>0.55 0.56 0.55 1</color></diffuse></lambert></technique></profile_COMMON></effect></library_effects>
+<library_materials><material id="mat_red" name="red"><instance_effect url="#fx_red"/></material><material id="mat_dark" name="dark"><instance_effect url="#fx_dark"/></material><material id="mat_concrete" name="concrete"><instance_effect url="#fx_concrete"/></material><material id="mat_steel" name="steel"><instance_effect url="#fx_steel"/></material></library_materials>
+<library_geometries><geometry id="cube_geom" name="LowPolySteelBeam"><mesh>
+<source id="cube_pos"><float_array id="cube_pos_arr" count="72">-0.5 -0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5</float_array><technique_common><accessor source="#cube_pos_arr" count="24" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source>
+<source id="cube_norm"><float_array id="cube_norm_arr" count="72">0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array><technique_common><accessor source="#cube_norm_arr" count="24" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source>
+<vertices id="cube_vertices"><input semantic="POSITION" source="#cube_pos"/></vertices>
+<triangles material="beam_material" count="12"><input semantic="VERTEX" source="#cube_vertices" offset="0"/><input semantic="NORMAL" source="#cube_norm" offset="1"/><p>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 12 13 14 12 14 15 16 17 18 16 18 19 20 21 22 20 22 23</p></triangles>
+</mesh></geometry></library_geometries>
+<library_visual_scenes><visual_scene id="Scene" name="Scene"><node id="SHORE_PILE_LEFT" name="SHORE_PILE_LEFT" type="NODE">
+<translate>-0.95 0.45 1.4</translate><scale>0.42 0.48 2.8</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_concrete"/></technique_common></bind_material></instance_geometry>
+</node><node id="SHORE_PILE_RIGHT" name="SHORE_PILE_RIGHT" type="NODE">
+<translate>0.95 0.45 1.4</translate><scale>0.42 0.48 2.8</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_concrete"/></technique_common></bind_material></instance_geometry>
+</node><node id="LOWER_CROSS_BEAM" name="LOWER_CROSS_BEAM" type="NODE">
+<translate>0 0.25 0.35</translate><scale>2.8 0.34 0.28</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_red"/></technique_common></bind_material></instance_geometry>
+</node><node id="BOAT_SUPPORT_CROSSHEAD" name="BOAT_SUPPORT_CROSSHEAD" type="NODE">
+<translate>0 -0.35 2.55</translate><scale>3.1 0.42 0.32</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_red"/></technique_common></bind_material></instance_geometry>
+</node><node id="DIAGONAL_LEG_LEFT" name="DIAGONAL_LEG_LEFT" type="NODE">
+<translate>-1.05 -1.5 1.335</translate><rotate>1 0 0 136.57432911637125</rotate><scale>0.3 0.34 3.3697032510296805</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_red"/></technique_common></bind_material></instance_geometry>
+</node><node id="DIAGONAL_LEG_RIGHT" name="DIAGONAL_LEG_RIGHT" type="NODE">
+<translate>1.05 -1.5 1.335</translate><rotate>1 0 0 136.57432911637125</rotate><scale>0.3 0.34 3.3697032510296805</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_red"/></technique_common></bind_material></instance_geometry>
+</node><node id="REAR_UPRIGHT" name="REAR_UPRIGHT" type="NODE">
+<translate>0 0.15 1.55</translate><scale>0.34 0.38 2.7</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_red"/></technique_common></bind_material></instance_geometry>
+</node><node id="REAR_BRACE_LEFT" name="REAR_BRACE_LEFT" type="NODE">
+<translate>-0.6499999999999999 0.25 1.435</translate><rotate>1 0 0 5.79696861907001</rotate><scale>0.18 0.2 2.0690335908341364</scale>
+<instance_geometry url="#cube_geom"><bind_material><technique_common><instance_material symbol="beam_material" target="#mat_dark"/></technique_common></bind_material></instance_geometry>
+</node></visual_scene></library_visual_scenes>
+<scene><instance_visual_scene url="#Scene"/></scene>
+</COLLADA>
