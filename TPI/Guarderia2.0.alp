@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.10.202609221912" AlpVersion="8.9.10">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.10.202609231424" AlpVersion="8.9.10">
 <Model>
 	<Id>1790026647915</Id>
 	<Name><![CDATA[Guarderia2]]></Name>
@@ -408,7 +408,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791852042580</Id>
 					<Name><![CDATA[connector13]]></Name>
-					<X>815</X><Y>1430</Y>
+					<X>1225</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -441,7 +441,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791852480374</Id>
 					<Name><![CDATA[connector17]]></Name>
-					<X>815</X><Y>1530</Y>
+					<X>1225</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -474,7 +474,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791852884406</Id>
 					<Name><![CDATA[connector19]]></Name>
-					<X>1500</X><Y>1430</Y>
+					<X>1910</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -507,7 +507,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791853335694</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>1460</X><Y>1530</Y>
+					<X>1870</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -540,7 +540,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791853370920</Id>
 					<Name><![CDATA[connector23]]></Name>
-					<X>1500</X><Y>1530</Y>
+					<X>1910</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -573,7 +573,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791853422279</Id>
 					<Name><![CDATA[connector20]]></Name>
-					<X>1410</X><Y>1430</Y>
+					<X>1820</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -606,7 +606,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791853591902</Id>
 					<Name><![CDATA[connector7]]></Name>
-					<X>2050</X><Y>1530</Y>
+					<X>2460</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -639,7 +639,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791853598231</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>665</X><Y>280</Y>
+					<X>1075</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -672,7 +672,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1791855611989</Id>
 					<Name><![CDATA[connector15]]></Name>
-					<X>1120</X><Y>1430</Y>
+					<X>1530</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -705,7 +705,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794919158194</Id>
 					<Name><![CDATA[connector22]]></Name>
-					<X>510</X><Y>280</Y>
+					<X>920</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -738,7 +738,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794919158196</Id>
 					<Name><![CDATA[connector25]]></Name>
-					<X>1320</X><Y>1430</Y>
+					<X>1730</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -771,7 +771,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794919219911</Id>
 					<Name><![CDATA[connector24]]></Name>
-					<X>1220</X><Y>1530</Y>
+					<X>1630</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -804,7 +804,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794919219913</Id>
 					<Name><![CDATA[connector26]]></Name>
-					<X>1300</X><Y>1530</Y>
+					<X>1710</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -837,7 +837,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921727467</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>310</X><Y>280</Y>
+					<X>720</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -870,7 +870,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921768745</Id>
 					<Name><![CDATA[connector14]]></Name>
-					<X>855</X><Y>1430</Y>
+					<X>1265</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -903,7 +903,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921830739</Id>
 					<Name><![CDATA[connector29]]></Name>
-					<X>700</X><Y>1530</Y>
+					<X>1110</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -936,7 +936,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921849950</Id>
 					<Name><![CDATA[connector18]]></Name>
-					<X>390</X><Y>280</Y>
+					<X>800</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -969,7 +969,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921937466</Id>
 					<Name><![CDATA[connector28]]></Name>
-					<X>930</X><Y>1430</Y>
+					<X>1340</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1002,7 +1002,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921937468</Id>
 					<Name><![CDATA[connector31]]></Name>
-					<X>1020</X><Y>1430</Y>
+					<X>1430</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1035,7 +1035,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921945178</Id>
 					<Name><![CDATA[connector30]]></Name>
-					<X>390</X><Y>280</Y>
+					<X>800</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1068,7 +1068,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794921945180</Id>
 					<Name><![CDATA[connector32]]></Name>
-					<X>1010</X><Y>1530</Y>
+					<X>1420</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1101,7 +1101,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794922022765</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>1120</X><Y>1530</Y>
+					<X>1530</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1134,7 +1134,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794922049415</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>390</X><Y>280</Y>
+					<X>800</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1167,7 +1167,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794922049417</Id>
 					<Name><![CDATA[connector33]]></Name>
-					<X>390</X><Y>280</Y>
+					<X>800</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1200,7 +1200,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794922054625</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>1590</X><Y>1530</Y>
+					<X>2000</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1233,7 +1233,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794922054627</Id>
 					<Name><![CDATA[connector34]]></Name>
-					<X>1660</X><Y>1530</Y>
+					<X>2070</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1266,7 +1266,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794928511939</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>1770</X><Y>1430</Y>
+					<X>2180</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1299,7 +1299,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794928511941</Id>
 					<Name><![CDATA[connector35]]></Name>
-					<X>1880</X><Y>1430</Y>
+					<X>2290</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1332,7 +1332,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794928531327</Id>
 					<Name><![CDATA[connector21]]></Name>
-					<X>1770</X><Y>1530</Y>
+					<X>2180</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1365,7 +1365,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794928531329</Id>
 					<Name><![CDATA[connector36]]></Name>
-					<X>1880</X><Y>1530</Y>
+					<X>2290</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1398,7 +1398,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794948357674</Id>
 					<Name><![CDATA[connector27]]></Name>
-					<X>690</X><Y>1430</Y>
+					<X>1100</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1431,7 +1431,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794948357677</Id>
 					<Name><![CDATA[connector37]]></Name>
-					<X>580</X><Y>1430</Y>
+					<X>990</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1458,13 +1458,13 @@ for (int i = 0; i < espacios.size(); i++) {
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-90</X><Y>0</Y></Point>
+						<Point><X>-120</X><Y>10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1794948394957</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>690</X><Y>1530</Y>
+					<X>1100</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1497,7 +1497,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1794948394959</Id>
 					<Name><![CDATA[connector38]]></Name>
-					<X>580</X><Y>1530</Y>
+					<X>990</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1524,8 +1524,8 @@ for (int i = 0; i < espacios.size(); i++) {
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-100</X><Y>0</Y></Point>
-						<Point><X>-100</X><Y>-90</Y></Point>
+						<Point><X>-130</X><Y>0</Y></Point>
+						<Point><X>-130</X><Y>-80</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1961,7 +1961,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1795088818921</Id>
 					<Name><![CDATA[connector53]]></Name>
-					<X>-1040</X><Y>-150</Y>
+					<X>390</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1969,11 +1969,11 @@ for (int i = 0; i < espacios.size(); i++) {
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[guarderia2_0]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[navegacion1]]></ItemName>
+						<ItemName><![CDATA[alejarse1]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -1987,8 +1987,8 @@ for (int i = 0; i < espacios.size(); i++) {
 						<ItemName><![CDATA[out]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>1390</X><Y>1420</Y></Point>
-						<Point><X>1330</X><Y>1420</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2324,7 +2324,7 @@ for (int i = 0; i < espacios.size(); i++) {
 				<Connector>
 					<Id>1795089896649</Id>
 					<Name><![CDATA[connector64]]></Name>
-					<X>350</X><Y>1340</Y>
+					<X>390</X><Y>1340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2332,11 +2332,11 @@ for (int i = 0; i < espacios.size(); i++) {
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[guarderia2_0]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[navegacion2]]></ItemName>
+						<ItemName><![CDATA[alejarse2]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -2351,13 +2351,13 @@ for (int i = 0; i < espacios.size(); i++) {
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1795090065230</Id>
 					<Name><![CDATA[connector54]]></Name>
-					<X>390</X><Y>1270</Y>
+					<X>550</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2375,24 +2375,23 @@ for (int i = 0; i < espacios.size(); i++) {
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[guarderia2_0]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[porGalpon]]></ItemName>
+						<ItemName><![CDATA[regresar1]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>140</Y></Point>
-						<Point><X>80</X><Y>160</Y></Point>
+						<Point><X>130</X><Y>0</Y></Point>
+						<Point><X>90</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1795090072713</Id>
 					<Name><![CDATA[connector65]]></Name>
-					<X>390</X><Y>1340</Y>
+					<X>550</X><Y>1340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2410,6 +2409,107 @@ for (int i = 0; i < espacios.size(); i++) {
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[guarderia2_0]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[regresar2]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>70</X><Y>0</Y></Point>
+						<Point><X>110</X><Y>0</Y></Point>
+						<Point><X>100</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1795293269944</Id>
+					<Name><![CDATA[connector]]></Name>
+					<X>430</X><Y>1270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[alejarse1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[navegacion1]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Delay]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1795293616274</Id>
+					<Name><![CDATA[connector9]]></Name>
+					<X>430</X><Y>1340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[alejarse2]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[navegacion2]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Delay]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1795293627207</Id>
+					<Name><![CDATA[connector10]]></Name>
+					<X>690</X><Y>1340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[regresar2]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
 						<ItemName><![CDATA[porGalpon]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
@@ -2419,9 +2519,40 @@ for (int i = 0; i < espacios.size(); i++) {
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>80</Y></Point>
-						<Point><X>80</X><Y>90</Y></Point>
+						<Point><X>160</X><Y>-20</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1795293499098</Id>
+					<Name><![CDATA[connector1]]></Name>
+					<X>680</X><Y>1270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[regresar1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[guarderia2_0]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[porGalpon]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>170</X><Y>50</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -2730,7 +2861,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1790028188371</Id>
 					<Name><![CDATA[guardado1]]></Name>
-					<X>1730</X><Y>1420</Y>
+					<X>2140</X><Y>1300</Y>
 					<Label><X>-5</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3086,7 +3217,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1790028245852</Id>
 					<Name><![CDATA[guardado2]]></Name>
-					<X>1730</X><Y>1520</Y>
+					<X>2140</X><Y>1400</Y>
 					<Label><X>-10</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3442,7 +3573,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1790028297768</Id>
 					<Name><![CDATA[estadia1]]></Name>
-					<X>1960</X><Y>1410</Y>
+					<X>2370</X><Y>1290</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3531,7 +3662,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1790028378663</Id>
 					<Name><![CDATA[estadia2]]></Name>
-					<X>1960</X><Y>1510</Y>
+					<X>2370</X><Y>1390</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3620,7 +3751,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1790028566292</Id>
 					<Name><![CDATA[fin1]]></Name>
-					<X>2055</X><Y>1420</Y>
+					<X>2465</X><Y>1300</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3675,7 +3806,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1790028579470</Id>
 					<Name><![CDATA[fin2]]></Name>
-					<X>2050</X><Y>1520</Y>
+					<X>2460</X><Y>1400</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5011,7 +5142,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791851957467</Id>
 					<Name><![CDATA[porGalpon]]></Name>
-					<X>460</X><Y>1420</Y>
+					<X>840</X><Y>1310</Y>
 					<Label><X>-10</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5087,7 +5218,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791851995377</Id>
 					<Name><![CDATA[colaRio1]]></Name>
-					<X>750</X><Y>1410</Y>
+					<X>1160</X><Y>1290</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5187,7 +5318,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852040639</Id>
 					<Name><![CDATA[tomarAsc1]]></Name>
-					<X>815</X><Y>1410</Y>
+					<X>1225</X><Y>1290</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5229,6 +5360,9 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[sendResources]]></Name>
@@ -5259,6 +5393,9 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocationQueue]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[filaAscenso]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[priority]]></Name>
@@ -5391,7 +5528,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852303536</Id>
 					<Name><![CDATA[soltarAsc1]]></Name>
-					<X>1550</X><Y>1410</Y>
+					<X>1960</X><Y>1290</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5488,7 +5625,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852419258</Id>
 					<Name><![CDATA[colaRio2]]></Name>
-					<X>750</X><Y>1510</Y>
+					<X>1160</X><Y>1390</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5588,7 +5725,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852479185</Id>
 					<Name><![CDATA[tomarAsc2]]></Name>
-					<X>815</X><Y>1510</Y>
+					<X>1225</X><Y>1390</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5660,6 +5797,9 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocationQueue]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[filaAscenso]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[priority]]></Name>
@@ -5792,7 +5932,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852532862</Id>
 					<Name><![CDATA[soltarAsc2]]></Name>
-					<X>1550</X><Y>1510</Y>
+					<X>1960</X><Y>1390</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5889,7 +6029,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852765093</Id>
 					<Name><![CDATA[trabajoManual1]]></Name>
-					<X>1460</X><Y>1410</Y>
+					<X>1870</X><Y>1290</Y>
 					<Label><X>-25</X><Y>45</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5975,7 +6115,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852813585</Id>
 					<Name><![CDATA[trabajoManual2]]></Name>
-					<X>1460</X><Y>1510</Y>
+					<X>1870</X><Y>1390</Y>
 					<Label><X>-25</X><Y>53</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6061,7 +6201,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791852963199</Id>
 					<Name><![CDATA[tomarGrua1]]></Name>
-					<X>1370</X><Y>1410</Y>
+					<X>1780</X><Y>1290</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6262,7 +6402,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791853259155</Id>
 					<Name><![CDATA[tomarGrua2]]></Name>
-					<X>1360</X><Y>1510</Y>
+					<X>1770</X><Y>1390</Y>
 					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6463,7 +6603,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791855398988</Id>
 					<Name><![CDATA[entrarAsc1]]></Name>
-					<X>1080</X><Y>1410</Y>
+					<X>1490</X><Y>1290</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6612,7 +6752,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791855433384</Id>
 					<Name><![CDATA[entrarAsc2]]></Name>
-					<X>1080</X><Y>1510</Y>
+					<X>1490</X><Y>1390</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6761,7 +6901,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791855536387</Id>
 					<Name><![CDATA[subirAsc2]]></Name>
-					<X>1180</X><Y>1510</Y>
+					<X>1590</X><Y>1390</Y>
 					<Label><X>-10</X><Y>50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6910,7 +7050,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1791855610273</Id>
 					<Name><![CDATA[subirAsc1]]></Name>
-					<X>1180</X><Y>1410</Y>
+					<X>1590</X><Y>1290</Y>
 					<Label><X>-15</X><Y>45</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7059,7 +7199,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794919100852</Id>
 					<Name><![CDATA[subidaAsc1]]></Name>
-					<X>1280</X><Y>1410</Y>
+					<X>1690</X><Y>1290</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7148,7 +7288,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794919217845</Id>
 					<Name><![CDATA[subidaAsc2]]></Name>
-					<X>1260</X><Y>1510</Y>
+					<X>1670</X><Y>1390</Y>
 					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7237,7 +7377,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921686722</Id>
 					<Name><![CDATA[iniEspera1]]></Name>
-					<X>690</X><Y>1410</Y>
+					<X>1100</X><Y>1290</Y>
 					<Label><X>-45</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7286,7 +7426,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921734759</Id>
 					<Name><![CDATA[finEspera1]]></Name>
-					<X>900</X><Y>1410</Y>
+					<X>1310</X><Y>1290</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7344,7 +7484,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921820174</Id>
 					<Name><![CDATA[iniEspera2]]></Name>
-					<X>690</X><Y>1510</Y>
+					<X>1100</X><Y>1390</Y>
 					<Label><X>-20</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7393,7 +7533,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921847900</Id>
 					<Name><![CDATA[finEspera2]]></Name>
-					<X>900</X><Y>1510</Y>
+					<X>1310</X><Y>1390</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7451,7 +7591,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921920938</Id>
 					<Name><![CDATA[iniAsc1]]></Name>
-					<X>1010</X><Y>1410</Y>
+					<X>1420</X><Y>1290</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7500,7 +7640,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921942513</Id>
 					<Name><![CDATA[iniAsc2]]></Name>
-					<X>1000</X><Y>1510</Y>
+					<X>1410</X><Y>1390</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7549,7 +7689,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794921976437</Id>
 					<Name><![CDATA[finAsc1]]></Name>
-					<X>1635</X><Y>1410</Y>
+					<X>2045</X><Y>1290</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7607,7 +7747,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794922051769</Id>
 					<Name><![CDATA[finAsc2]]></Name>
-					<X>1630</X><Y>1510</Y>
+					<X>2040</X><Y>1390</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7665,7 +7805,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794928498728</Id>
 					<Name><![CDATA[finTotal1]]></Name>
-					<X>1850</X><Y>1410</Y>
+					<X>2260</X><Y>1290</Y>
 					<Label><X>-4</X><Y>-16</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7723,7 +7863,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794928529277</Id>
 					<Name><![CDATA[finTotal2]]></Name>
-					<X>1850</X><Y>1510</Y>
+					<X>2260</X><Y>1390</Y>
 					<Label><X>-2</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7781,7 +7921,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794948355953</Id>
 					<Name><![CDATA[iniTotal1]]></Name>
-					<X>580</X><Y>1410</Y>
+					<X>990</X><Y>1290</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7830,7 +7970,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 				<EmbeddedObject>
 					<Id>1794948392760</Id>
 					<Name><![CDATA[iniTotal2]]></Name>
-					<X>580</X><Y>1510</Y>
+					<X>990</X><Y>1390</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7940,13 +8080,13 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 									<Id>1794952583020</Id>
 									<ActiveObjectClass>
 										<PackageName><![CDATA[guarderia2_0]]></PackageName>
-										<ClassName><![CDATA[gruaAsc1]]></ClassName>
+										<ClassName><![CDATA[gruaPreAgente]]></ClassName>
 									</ActiveObjectClass>
 									<GenericParameterSubstitute>
 										<GenericParameterSubstituteReference>
 											<PackageName><![CDATA[guarderia2_0]]></PackageName>
-											<ClassName><![CDATA[gruaAsc1]]></ClassName>
-											<ItemName><![CDATA[1790028947265]]></ItemName>
+											<ClassName><![CDATA[gruaPreAgente]]></ClassName>
+											<ItemName><![CDATA[1795292589838]]></ItemName>
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
@@ -8307,6 +8447,24 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[idEmbarcacion]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[idEspacioAsignado]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[largo]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[ancho]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[almacenada]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[espacioAsignado]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -8537,6 +8695,24 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[idEmbarcacion]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[idEspacioAsignado]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[largo]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[ancho]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[almacenada]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[espacioAsignado]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -10556,7 +10732,7 @@ b.horaSolicitud = sortearHoraSolicitud();]]></Code>
 				<EmbeddedObject>
 					<Id>1795088061869</Id>
 					<Name><![CDATA[navegacion1]]></Name>
-					<X>350</X><Y>1250</Y>
+					<X>510</X><Y>1250</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10607,7 +10783,7 @@ b.horaSolicitud = sortearHoraSolicitud();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.setXY(uniform(700, 880), uniform(150, 800));]]></Code>
+								<Code><![CDATA[agent.setXY(5000, 5000);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10617,7 +10793,8 @@ b.horaSolicitud = sortearHoraSolicitud();]]></Code>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[Embarcacion b = (Embarcacion) agent;
-b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
+b.galponAsignado = b.espacioAsignado.galpon;
+b.setXY(uniform(660, 740), 110);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10674,6 +10851,9 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_XYZ]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
@@ -10692,12 +10872,21 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[760]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[325]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationZ]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationLatitude]]></Name>
@@ -11996,7 +12185,7 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 				<EmbeddedObject>
 					<Id>1795089893435</Id>
 					<Name><![CDATA[navegacion2]]></Name>
-					<X>350</X><Y>1320</Y>
+					<X>510</X><Y>1320</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12047,7 +12236,7 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.setXY(uniform(700, 880), uniform(150, 800));]]></Code>
+								<Code><![CDATA[agent.setXY(5000, 5000);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -12057,7 +12246,8 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[Embarcacion b = (Embarcacion) agent;
-b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
+b.galponAsignado = b.espacioAsignado.galpon;
+b.setXY(uniform(660, 740), 110);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -12082,6 +12272,638 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
 						<Id>1795089893433</Id>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1795293230037</Id>
+					<Name><![CDATA[alejarse1]]></Name>
+					<X>390</X><Y>1250</Y>
+					<Label><X>-10</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[MoveTo]]></ClassName>
+							<ItemName><![CDATA[1412336243157]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_XYZ]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationResource]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAgent]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[uniform(660,740)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[840]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationZ]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[useOffsets]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[straightMovement]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationUseRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationVerticalRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[movementType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[tripTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setSpeed]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[2]]></Code>
+								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreSpeedOnArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<Id>1795293230035</Id>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1795293485018</Id>
+					<Name><![CDATA[regresar1]]></Name>
+					<X>640</X><Y>1250</Y>
+					<Label><X>-10</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[MoveTo]]></ClassName>
+							<ItemName><![CDATA[1412336243157]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_XYZ]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationResource]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAgent]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[760]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[325]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationZ]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[useOffsets]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[straightMovement]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationUseRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationVerticalRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[movementType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[tripTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setSpeed]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[2]]></Code>
+								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreSpeedOnArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<Id>1795293485016</Id>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1795293596729</Id>
+					<Name><![CDATA[alejarse2]]></Name>
+					<X>390</X><Y>1320</Y>
+					<Label><X>-10</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[MoveTo]]></ClassName>
+							<ItemName><![CDATA[1412336243157]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_XYZ]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationResource]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAgent]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[uniform(660,740)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[110]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationZ]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[useOffsets]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[straightMovement]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationUseRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationVerticalRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[movementType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[tripTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setSpeed]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[2]]></Code>
+								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreSpeedOnArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<Id>1795293596727</Id>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1795293605393</Id>
+					<Name><![CDATA[regresar2]]></Name>
+					<X>650</X><Y>1320</Y>
+					<Label><X>-10</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[MoveTo]]></ClassName>
+							<ItemName><![CDATA[1412336243157]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_XYZ]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationResource]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAgent]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[760]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[325]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationZ]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[useOffsets]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[straightMovement]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationUseRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationVerticalRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[movementType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[tripTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setSpeed]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[2]]></Code>
+								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreSpeedOnArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<Id>1795293605391</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -13196,7 +14018,6 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<EmbeddedObject>
@@ -14124,6 +14945,240 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<RectangleNode>
+					<Id>1795298359675</Id>
+					<Name><![CDATA[filaAscenso]]></Name>
+					<X>790</X><Y>115</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<EmbeddedObject>
+						<Id>1795298359674</Id>
+						<ActiveObjectClass>
+							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
+							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
+								<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
+								<ItemName><![CDATA[1574694148121]]></ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters>
+							<Parameter>
+								<Name><![CDATA[appliedClass]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[speedRestricted]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[maxSpeed]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[accessRestricted]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[accessRestrictionType]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[accessRestrictionCondition]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[capacity]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[throughput]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[schedule]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[avoidedIfClosed]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onEnter]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onEnterDenied]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onExit]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onOpen]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onClose]]></Name>
+							</Parameter>
+						</Parameters>
+						<ReplicationFlag>false</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>SPECIFIED_NUMBER</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1795298359673</Id>
+							<TableReference>
+							</TableReference>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn>
+						</QuantityColumn>
+					</EmbeddedObject>
+					<LineColor>-14774017</LineColor>
+					<FillColor/>
+					<LineWidth>1</LineWidth>
+					<LineMaterial>null</LineMaterial>
+					<FillMaterial>null</FillMaterial>
+					<LineStyle>DASHED</LineStyle>
+					<AttractorsLayout>arranged</AttractorsLayout>
+
+			<Presentation>
+				<Attractor>
+					<Id>1795299737931</Id>
+					<Name><![CDATA[attractor1]]></Name>
+					<X>845</X><Y>275</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737933</Id>
+					<Name><![CDATA[attractor3]]></Name>
+					<X>815</X><Y>260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737935</Id>
+					<Name><![CDATA[attractor4]]></Name>
+					<X>845</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737937</Id>
+					<Name><![CDATA[attractor5]]></Name>
+					<X>815</X><Y>225</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737939</Id>
+					<Name><![CDATA[attractor6]]></Name>
+					<X>845</X><Y>205</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737941</Id>
+					<Name><![CDATA[attractor7]]></Name>
+					<X>815</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737943</Id>
+					<Name><![CDATA[attractor8]]></Name>
+					<X>845</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737945</Id>
+					<Name><![CDATA[attractor9]]></Name>
+					<X>815</X><Y>155</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1795299737947</Id>
+					<Name><![CDATA[attractor10]]></Name>
+					<X>845</X><Y>135</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>	
+				</Attractor>
+			</Presentation>
+
+					<Sloped>false</Sloped>
+					<Slope>
+						<Id>1795298359677</Id>
+						<Name><![CDATA[filaAscenso]]></Name>
+						<X>0</X><Y>10</Y>
+						<PublicFlag>false</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>true</ShowLabel>
+						<Dx>20</Dx>
+						<Dy>0</Dy>
+						<Dz>0</Dz>
+						<AngleX>30</AngleX>
+						<AngleZ>0</AngleZ>
+						<SlopeType>angle</SlopeType>	
+					</Slope>
+
+					<Width>80</Width>
+					<Height>180</Height>
+					<Rotation>0.0</Rotation>
+				</RectangleNode>
 			</Presentation>
 
 				</Level>
@@ -15620,6 +16675,131 @@ b.galponAsignado = b.espacioAsignado.galpon;]]></Code>
 			<Presentation>
 				<Level>
 					<Id>1791848938636</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1795292589835</Id>
+			<Name><![CDATA[gruaPreAgente]]></Name>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1795292589838</Id>
+				<Name><![CDATA[1795292589838]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor>-4144960</SceneBackgroundColor>
+            <EnvironmentResourceRef></EnvironmentResourceRef>
+            <EnvironmentType>NONE</EnvironmentType>
+            <EnvironmentRotationX>0</EnvironmentRotationX>
+            <EnvironmentRotationY>0</EnvironmentRotationY>
+            <EnvironmentRotationZ>0</EnvironmentRotationZ>
+            <EnvironmentIntensity>1</EnvironmentIntensity>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<MessageType><![CDATA[Object]]></MessageType>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+				<EnableSteps>false</EnableSteps>
+				<StepDurationCode Class="CodeUnitValue">
+					<Code><![CDATA[1.0]]></Code>
+					<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+				</StepDurationCode>
+				<SpaceType>CONTINUOUS</SpaceType>
+				<WidthCode><![CDATA[500]]></WidthCode>
+				<HeightCode><![CDATA[500]]></HeightCode>
+				<ZHeightCode><![CDATA[0]]></ZHeightCode>
+				<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+				<RowsCountCode><![CDATA[100]]></RowsCountCode>
+				<NeigborhoodType>MOORE</NeigborhoodType>
+				<LayoutType>USER_DEF</LayoutType>
+				<NetworkType>USER_DEF</NetworkType>
+				<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+				<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+				<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+				<MCode><![CDATA[10]]></MCode>
+				<LineStyle>SOLID</LineStyle>
+				<LineWidth>1</LineWidth>
+				<LineColor>-16777216</LineColor>
+				<LineZOrder>UNDER_AGENTS</LineZOrder>
+				<LineArrow>NONE</LineArrow>
+				<LineArrowPosition>END</LineArrowPosition>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<Id>1795292589834</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1795334400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1795292589836</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1795292589839</CurrentLevel>
+
+
+			<Presentation>
+				<Level>
+					<Id>1795292589839</Id>
 					<Name><![CDATA[level]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
