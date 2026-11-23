@@ -6246,12 +6246,21 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[sendResources]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_NODE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[llegada1]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationAttractor]]></Name>
@@ -6270,6 +6279,9 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[attachResources]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocationQueue]]></Name>
@@ -6447,12 +6459,21 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[sendResources]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_NODE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[llegada2]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationAttractor]]></Name>
@@ -6471,6 +6492,9 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[attachResources]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocationQueue]]></Name>
@@ -6927,7 +6951,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[llegadaRio2]]></Code>
+								<Code><![CDATA[llegada2]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7005,7 +7029,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						<Parameter>
 							<Name><![CDATA[speed]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[0.025]]></Code>
+								<Code><![CDATA[0.29 * velocidadAscensor / alturaAscensor]]></Code>
 								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 							</Value>
 						</Parameter>
@@ -7076,7 +7100,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[llegadaRio1]]></Code>
+								<Code><![CDATA[llegada1]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7154,7 +7178,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						<Parameter>
 							<Name><![CDATA[speed]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[0.025]]></Code>
+								<Code><![CDATA[0.29 * velocidadAscensor / alturaAscensor]]></Code>
 								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 							</Value>
 						</Parameter>
@@ -7222,7 +7246,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[alturaAscensor / velocidadAscensor]]></Code>
+								<Code><![CDATA[0]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -7311,7 +7335,7 @@ return String.format(java.util.Locale.forLanguageTag("es-AR"),
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[alturaAscensor / velocidadAscensor]]></Code>
+								<Code><![CDATA[0]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
